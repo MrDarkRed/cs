@@ -1,9 +1,10 @@
-﻿[
+[
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=animecix.net&sz=%size%",
+        "fileHash": "sha256-e12de4533ee6bccefdd02e1ed3eaa7ae639c68d7e95769a934991823079bef97",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 21262,
+        "fileSize": 21338,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -22,9 +23,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=belgeselx.com&sz=%size%",
+        "fileHash": "sha256-85cd85834b3f131574f4349f31066025ddd3caaafef37ae975523cc67e060a3f",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18546,
+        "fileSize": 19330,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -42,9 +44,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=tr.canlitv.team&sz=%size%",
+        "fileHash": "sha256-c80483ef1dfbeceae4560e7f0800a8e9c6bfc9e90636e7ad21aba924e4c36a0d",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18323,
+        "fileSize": 19135,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -62,9 +65,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=cizgimax.online&sz=%size%",
+        "fileHash": "sha256-2c0fa40d456e7c5dbc345685362163a9df28f983d8703249858a766ccf6fb65a",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 17634,
+        "fileSize": 17888,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -81,9 +85,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.de&sz=%size%",
+        "fileHash": "sha256-621afcc61d3b27f6c0657a5bafd6bdb95faa00a22c06fffddba193f471d92cc7",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20712,
+        "fileSize": 20661,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -100,9 +105,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=https://dizikorea.vip&sz=%size%",
+        "fileHash": "sha256-18f890d9bb3da69d1a3d855ac5c4942f34d32ffef4739decb4947072c0256cc2",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18178,
+        "fileSize": 18224,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -119,9 +125,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%",
+        "fileHash": "sha256-a55dc03dbc290913f299212ed3acb1a29d29a7370c3e61cca0c5b04bb9b02689",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 23921,
+        "fileSize": 23924,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -137,10 +144,31 @@
         "name": "Dizilla"
     },
     {
-        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizimom.tv&sz=%size%",
+        "iconUrl": "https://ddizimag.com/favicon.ico",
+        "fileHash": "sha256-ad2ff8644126be0881ff27837e617a9694fa2b38c990a293f49ea57f56920d5d",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 28095,
+        "fileSize": 12728,
+        "status": 1,
+        "language": "tr",
+        "authors": [
+            "MrDarkRed"
+        ],
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "DiziMag",
+        "description": "DiziMag \u2014 T\u00fcrk\u00e7e dizi izleme sitesi.",
+        "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziMag.cs3",
+        "name": "DiziMag"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizimom.tv&sz=%size%",
+        "fileHash": "sha256-791e849a04749d7b1ce55b89d6d5a1029c40d11c9678bd45fbdb47bc189a86c7",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/MrDarkRed/cs",
+        "fileSize": 28339,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -157,9 +185,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=https://dizipal683.com&sz=%size%",
+        "fileHash": "sha256-78e1bfa6ebb8f2ddbb5240a99428d98923d0ca58dd448e912411d0d616ab764a",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 16894,
+        "fileSize": 16877,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -178,9 +207,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.diziyou.co&sz=%size%",
+        "fileHash": "sha256-0f536b30a2b524b6829ed87d9cae23e6e6d44afa970130acb4d82de395fa20b0",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13714,
+        "fileSize": 13696,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -197,9 +227,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.film&sz=%size%",
+        "fileHash": "sha256-c4bea0c38eb2b19c118709afde75eabe740f0c871c58ef947ec0c4044285bb77",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13874,
+        "fileSize": 13855,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -217,9 +248,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.filmmodu17.com&sz=%size%",
+        "fileHash": "sha256-fcc3d3d741fac7c238539641acf2c42b09a284b2af74070569f28e8c3c13722c",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 14157,
+        "fileSize": 14153,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -236,9 +268,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=fullhdfilm.pro&sz=%size%",
+        "fileHash": "sha256-00155269b73e2738a25746ee2dee87905e4ad02217f9eb34c0c092d90d8b9268",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18264,
+        "fileSize": 18222,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -256,9 +289,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.fullhdfilmizlesene.de&sz=%size%",
+        "fileHash": "sha256-9a9d71143c07093eda21ed5584b192358cdf86de5737138fad90fcd15dba5254",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 28066,
+        "fileSize": 28139,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -275,9 +309,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=fullporner.com&sz=%size%",
+        "fileHash": "sha256-d9faa5b791eef3c290a8820e1cc0ba6878486175f05d6011aa6e2b2a47f4b195",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 11843,
+        "fileSize": 11856,
         "status": 1,
         "language": "en",
         "authors": [
@@ -295,9 +330,10 @@
     },
     {
         "iconUrl": "https://www.apkdelisi.net/wp-content/uploads/2022/03/golge-tv-reklamsiz-mod-apk-canli-tv-apkdelisi-0.jpg",
+        "fileHash": "sha256-afd3aa40c6a600fbb85a465544ae826e35fa20917e16fd09bc08c5b88dd7dede",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 24152,
+        "fileSize": 26182,
         "status": 3,
         "language": "tr",
         "authors": [
@@ -315,9 +351,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.com&sz=%size%",
+        "fileHash": "sha256-a2f464cce80d4cb58ed2298dd2db38628af0c5dbccca4451dff0eefb7e457bed",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 19343,
+        "fileSize": 20102,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -336,9 +373,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=hqporner.com&sz=%size%",
+        "fileHash": "sha256-dec66b1a50d7692611454334c46f9dd0add22a93e03d2600eb02cd63da245924",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 16566,
+        "fileSize": 17264,
         "status": 1,
         "language": "en",
         "authors": [
@@ -355,9 +393,10 @@
     },
     {
         "iconUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3vCp6N1K4bECoYRQD-cisJF2_6V_Hk01ZhDmoPR2JuM8O5qr4MqrPO1munM9cRlleBBSK6odYhLtDBWv4E3vhPhynlmS5hVVtJZShHoGA5REQ8_3v8SIlccTEqzVQu2UJyNYQdJNrKIfWy66RQeT0D-CcmFCbHPz5023H6p2v5fv4NVloZ5Rqo_yGrIY/s320/iNat-Box-App.png",
+        "fileHash": "sha256-a9ba3e4bd4f68eeb532fe2b4f67b4482012b7e9e022610bb1463abd8538b1f46",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 27122,
+        "fileSize": 27149,
         "status": 3,
         "language": "tr",
         "authors": [
@@ -377,9 +416,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=720pizle.ai&sz=%size%",
+        "fileHash": "sha256-b544f1377c3dfee0efd8ebd9428710c52830828ab7c92318240f337ca884d745",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 15085,
+        "fileSize": 15111,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -396,9 +436,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=https://jetfilmizle.de&sz=%size%",
+        "fileHash": "sha256-b3be13cd09fd237e24c5017b626a25c833c1ae4ad9fae01bfcaa0f7fbaca2095",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13908,
+        "fileSize": 13939,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -415,9 +456,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.koreanturk.com&sz=%size%",
+        "fileHash": "sha256-3d3d63a9392feb1b28dba0e381ba71969970b3701960663853d7155c499fc094",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 12215,
+        "fileSize": 12188,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -434,9 +476,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=kultfilmler.com&sz=%size%",
+        "fileHash": "sha256-724c428dbdf0caf9124ac96c3a6940a84246a4e31420e6856b14823d9157265f",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18324,
+        "fileSize": 18314,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -454,9 +497,10 @@
     },
     {
         "iconUrl": "https://iosmirror.cc/img/nf2/icon_x192.png",
+        "fileHash": "sha256-9b7218e023cfef9e6935e44e6b19bed727a3aedfe7e29559642d7bde2146655d",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 37420,
+        "fileSize": 37611,
         "status": 1,
         "language": "hi",
         "authors": [
@@ -475,9 +519,10 @@
     },
     {
         "iconUrl": "https://cdn1.iconfinder.com/data/icons/nsfw-1/64/tv-adult-content-porn-512.png",
+        "fileHash": "sha256-003feee8a9883f043297cf65ed03bb0efb580c62663b4400f68c2b8a9d3d35ed",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13766,
+        "fileSize": 13778,
         "status": 1,
         "language": "ru",
         "authors": [
@@ -495,9 +540,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=pornhub.com&sz=%size%",
+        "fileHash": "sha256-28ffb4b3b0c997f7ba53b0bd41d88d02f77175512a3b05422b79f8ce84f1c5a4",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 11103,
+        "fileSize": 11114,
         "status": 1,
         "language": "en",
         "authors": [
@@ -514,9 +560,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=rarefilmm.com&sz=%size%",
+        "fileHash": "sha256-ba8293861ecbdb2b8c0e6dda39b06a3d7d43dcf74e0a8e387b2dd1175b06bd8f",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 14081,
+        "fileSize": 14902,
         "status": 1,
         "language": "en",
         "authors": [
@@ -533,9 +580,10 @@
     },
     {
         "iconUrl": "https://rectvapk.cc/wp-content/uploads/2023/02/Rec-TV.webp",
+        "fileHash": "sha256-4c1f417b6c4b8ef69c608e8a578e6067a057a378238c08c3b46055365cb041b1",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20130,
+        "fileSize": 21794,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -557,9 +605,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.setfilmizle.de&sz=%size%",
+        "fileHash": "sha256-57b434cd313c9d560b24734ecc5d643307d9edc86c160b6b666299c16b6c9a1d",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20970,
+        "fileSize": 20939,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -577,9 +626,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi6.com&sz=%size%",
+        "fileHash": "sha256-966861e1fbc573d049a125fab0bf9e6a3fbe4b57dd76f33f32496c6f40d947f0",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18745,
+        "fileSize": 18851,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -597,9 +647,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.sinema.cx&sz=%size%",
+        "fileHash": "sha256-124ce5a0f2f4dae8ee49321ef0a9ccf149a23ef0274a0b89eb14eb5e99e729df",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13425,
+        "fileSize": 13402,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -616,9 +667,10 @@
     },
     {
         "iconUrl": "https://play-lh.googleusercontent.com/brwGNmr7IjA_MKk_TTPs0va10hdKE_bD_a1lnKoiMuCayW98EHpRv55edA6aEoJlmwfX",
+        "fileHash": "sha256-19729748469b0ae48ffda8ebc729c585a5f6223c72ee6c88a6edb5b63730eab2",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 24660,
+        "fileSize": 24782,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -638,9 +690,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=spankbang.com&sz=%size%",
+        "fileHash": "sha256-ca429c5095818f95cab36c57c806d49fa7e57205ea91e03ea2a2a4c8a18680a6",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 11830,
+        "fileSize": 11800,
         "status": 1,
         "language": "en",
         "authors": [
@@ -658,9 +711,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.superfilmgeldi.biz&sz=%size%",
+        "fileHash": "sha256-00e1500b01601bf8675d4a0a76a85325221de067a9c59d13baac3d3f6973cd3a",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 17424,
+        "fileSize": 17543,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -677,9 +731,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.turkanime.co&sz=%size%",
+        "fileHash": "sha256-688929fdf4831f615e99d74b84506aac58da78741bab4ddc5ebd9fc66cb8115f",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 15070,
+        "fileSize": 15363,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -696,9 +751,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=ugurfilm7.com&sz=%size%",
+        "fileHash": "sha256-0f333d6c5c7bcfd63f277567bc96d93d4042130814ce363e80877ae7d6d87a84",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20020,
+        "fileSize": 21336,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -715,9 +771,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=uncutmaza.cc&sz=%size%",
+        "fileHash": "sha256-b37ddd861257692ae73d26d6e688a478d97d91a832e891191aae57632b8900b2",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 9294,
+        "fileSize": 9306,
         "status": 1,
         "language": "hi",
         "authors": [
@@ -734,9 +791,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=watch2movies.net&sz=%size%",
+        "fileHash": "sha256-258ace3c4438f19c86ee51831c98795698357e6d21f82233a464127adfd4850a",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18386,
+        "fileSize": 18408,
         "status": 3,
         "language": "en",
         "authors": [
@@ -753,9 +811,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=webteizle2.com&sz=%size%",
+        "fileHash": "sha256-8b08f5c8a00ac00a1f3c5e045865203c511ad2a42efdfc9e6c97f4ac56ad26a4",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20927,
+        "fileSize": 21821,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -772,9 +831,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=xhamster.com&sz=%size%",
+        "fileHash": "sha256-7981b7f8fe12f1f22e28619fc5d99f5575a2468080cd1292385bdece9bb757df",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 9872,
+        "fileSize": 9886,
         "status": 1,
         "language": "en",
         "authors": [
@@ -791,9 +851,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=youtube.com&sz=%size%",
+        "fileHash": "sha256-462301520c24885ca82552ea1cc59dceb9f9d22c882a4bc202895b3b018d367a",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13705,
+        "fileSize": 15356,
         "status": 1,
         "language": "tr",
         "authors": [
