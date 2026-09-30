@@ -1,6 +1,6 @@
-{
-  "name": "MrDarkRed Türkçe Repo",
-  "description": "Kişisel Türkçe CloudStream Eklenti Deposu",
+﻿{
+  "name": "MrDarkRed Turkce Repo",
+  "description": "Kisisel Turkce CloudStream Eklenti Deposu",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/MrDarkRed/cs/builds/plugins.json"
