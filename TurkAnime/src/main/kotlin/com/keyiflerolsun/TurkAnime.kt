@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 package com.keyiflerolsun
@@ -130,7 +130,7 @@ class TurkAnime : MainAPI() {
         }
     }
 
-    private fun iframe2AesLink(iframe: String): String? {
+    private suspend fun iframe2AesLink(iframe: String): String? {
         var aesData = iframe.substringAfter("embed/#/url/").substringBefore("?status")
         aesData     = String(Base64.decode(aesData, Base64.DEFAULT))
 
