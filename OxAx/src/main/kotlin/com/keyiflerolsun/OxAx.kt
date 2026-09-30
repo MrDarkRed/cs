@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 package com.keyiflerolsun

@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://github.com/SaurabhKaperwan/CSX/blob/master/NetflixMirrorProvider/src/main/kotlin/com/horis/cloudstreamplugins/PrimeVideoMirrorProvider.kt
 
 package com.keyiflerolsun

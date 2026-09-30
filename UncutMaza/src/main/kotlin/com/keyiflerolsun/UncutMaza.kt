@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://codeberg.org/coxju/cs-ext-coxju/src/branch/master/UncutMaza/src/main/kotlin/com/coxju/UncutMaza.kt
 
 package com.keyiflerolsun

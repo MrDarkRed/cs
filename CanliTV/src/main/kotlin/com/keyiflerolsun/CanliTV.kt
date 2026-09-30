@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://codeberg.org/cloudstream/cloudstream-extensions-multilingual/src/branch/master/FreeTVProvider/src/main/kotlin/com/lagradost/FreeTVProvider.kt
 
 package com.keyiflerolsun

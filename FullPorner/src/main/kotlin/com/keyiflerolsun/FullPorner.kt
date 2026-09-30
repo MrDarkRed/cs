@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://codeberg.org/coxju/cs-ext-coxju/src/branch/master/FullPorner/src/main/kotlin/com/coxju/FullPorner.kt
 // ! https://github.com/SaurabhKaperwan/CSX/blob/master/FullPorner/src/main/kotlin/com/megix/FullPorner.kt
 

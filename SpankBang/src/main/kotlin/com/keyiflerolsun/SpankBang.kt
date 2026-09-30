@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://github.com/phisher98/CXXX/blob/master/spankbang/src/main/kotlin/com/Spankbang/spankbang.kt
 
 package com.keyiflerolsun

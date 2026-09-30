@@ -1,0 +1,973 @@
+﻿2026-09-30T11:41:13.2622596Z Current runner version: '2.337.0'
+2026-09-30T11:41:13.2648745Z ##[group]Runner Image Provisioner
+2026-09-30T11:41:13.2649764Z Hosted Compute Agent
+2026-09-30T11:41:13.2650496Z Version: 20260901.588
+2026-09-30T11:41:13.2651312Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-09-30T11:41:13.2652095Z Build Date: 2026-09-01T19:56:44Z
+2026-09-30T11:41:13.2652814Z Worker ID: {2e7191d4-2d92-428f-b066-5a4623e26eb3}
+2026-09-30T11:41:13.2653610Z Azure Region: eastus2
+2026-09-30T11:41:13.2654586Z ##[endgroup]
+2026-09-30T11:41:13.2656817Z ##[group]Operating System
+2026-09-30T11:41:13.2657525Z Ubuntu
+2026-09-30T11:41:13.2658162Z 24.04.5
+2026-09-30T11:41:13.2658913Z LTS
+2026-09-30T11:41:13.2659496Z ##[endgroup]
+2026-09-30T11:41:13.2660215Z ##[group]Runner Image
+2026-09-30T11:41:13.2660873Z Image: ubuntu-24.04
+2026-09-30T11:41:13.2661535Z Version: 20260927.320.1
+2026-09-30T11:41:13.2662875Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T11:41:13.2664987Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-09-30T11:41:13.2666118Z ##[endgroup]
+2026-09-30T11:41:13.2669642Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T11:41:13.2672337Z Actions: write
+2026-09-30T11:41:13.2672990Z ArtifactMetadata: write
+2026-09-30T11:41:13.2673800Z Attestations: write
+2026-09-30T11:41:13.2674739Z Checks: write
+2026-09-30T11:41:13.2675416Z CodeQuality: write
+2026-09-30T11:41:13.2676083Z Contents: write
+2026-09-30T11:41:13.2676721Z CopilotRequests: write
+2026-09-30T11:41:13.2677419Z Deployments: write
+2026-09-30T11:41:13.2678074Z Discussions: write
+2026-09-30T11:41:13.2678672Z Drives: write
+2026-09-30T11:41:13.2679306Z Issues: write
+2026-09-30T11:41:13.2679915Z Metadata: read
+2026-09-30T11:41:13.2680658Z Models: read
+2026-09-30T11:41:13.2681276Z Packages: write
+2026-09-30T11:41:13.2681838Z Pages: write
+2026-09-30T11:41:13.2682495Z PullRequests: write
+2026-09-30T11:41:13.2683103Z RepositoryProjects: write
+2026-09-30T11:41:13.2683765Z SecurityEvents: write
+2026-09-30T11:41:13.2684631Z Statuses: write
+2026-09-30T11:41:13.2685268Z VulnerabilityAlerts: read
+2026-09-30T11:41:13.2685989Z ##[endgroup]
+2026-09-30T11:41:13.2688190Z Secret source: Actions
+2026-09-30T11:41:13.2689262Z Cache mode: write
+2026-09-30T11:41:13.2690224Z Prepare workflow directory
+2026-09-30T11:41:13.3022416Z Prepare all required actions
+2026-09-30T11:41:13.3070442Z Getting action download info
+2026-09-30T11:41:13.5761310Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T11:41:13.6606124Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-09-30T11:41:14.0822633Z Complete job name: build
+2026-09-30T11:41:14.1595920Z ##[group]Run actions/checkout@v4
+2026-09-30T11:41:14.1596808Z with:
+2026-09-30T11:41:14.1597231Z   path: src
+2026-09-30T11:41:14.1597677Z   repository: MrDarkRed/cs
+2026-09-30T11:41:14.1601409Z   token: ***
+2026-09-30T11:41:14.1601855Z   ssh-strict: true
+2026-09-30T11:41:14.1602320Z   ssh-user: git
+2026-09-30T11:41:14.1602780Z   persist-credentials: true
+2026-09-30T11:41:14.1603272Z   clean: true
+2026-09-30T11:41:14.1603722Z   sparse-checkout-cone-mode: true
+2026-09-30T11:41:14.1604525Z   fetch-depth: 1
+2026-09-30T11:41:14.1604956Z   fetch-tags: false
+2026-09-30T11:41:14.1605426Z   show-progress: true
+2026-09-30T11:41:14.1605895Z   lfs: false
+2026-09-30T11:41:14.1606320Z   submodules: false
+2026-09-30T11:41:14.1606771Z   set-safe-directory: true
+2026-09-30T11:41:14.1607294Z   allow-unsafe-pr-checkout: false
+2026-09-30T11:41:14.1608106Z ##[endgroup]
+2026-09-30T11:41:14.2653361Z Syncing repository: MrDarkRed/cs
+2026-09-30T11:41:14.2655718Z ##[group]Getting Git version info
+2026-09-30T11:41:14.2656497Z Working directory is '/home/runner/work/cs/cs/src'
+2026-09-30T11:41:14.2657470Z [command]/usr/bin/git version
+2026-09-30T11:41:14.2769422Z git version 2.55.0
+2026-09-30T11:41:14.2798620Z ##[endgroup]
+2026-09-30T11:41:14.2816111Z Temporarily overriding HOME='/home/runner/work/_temp/5a1d4646-cc48-4870-801a-371112ff45cb' before making global git config changes
+2026-09-30T11:41:14.2818921Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:41:14.2822778Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/src
+2026-09-30T11:41:14.2881289Z ##[group]Initializing the repository
+2026-09-30T11:41:14.2888206Z [command]/usr/bin/git init /home/runner/work/cs/cs/src
+2026-09-30T11:41:14.2986022Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T11:41:14.2987855Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T11:41:14.2994343Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T11:41:14.2995784Z hint: call:
+2026-09-30T11:41:14.2996526Z hint:
+2026-09-30T11:41:14.2997450Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T11:41:14.3000064Z hint:
+2026-09-30T11:41:14.3001186Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T11:41:14.3002831Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T11:41:14.3004383Z hint:
+2026-09-30T11:41:14.3005168Z hint: 	git branch -m <name>
+2026-09-30T11:41:14.3006239Z hint:
+2026-09-30T11:41:14.3007370Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T11:41:14.3009199Z Initialized empty Git repository in /home/runner/work/cs/cs/src/.git/
+2026-09-30T11:41:14.3011959Z [command]/usr/bin/git remote add origin https://github.com/MrDarkRed/cs
+2026-09-30T11:41:14.3071413Z ##[endgroup]
+2026-09-30T11:41:14.3072626Z ##[group]Disabling automatic garbage collection
+2026-09-30T11:41:14.3083189Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T11:41:14.3126150Z ##[endgroup]
+2026-09-30T11:41:14.3127520Z ##[group]Setting up auth
+2026-09-30T11:41:14.3135438Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:41:14.3176267Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:41:14.3604670Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:41:14.3645152Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:41:14.3917883Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:41:14.3954689Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:41:14.4200151Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T11:41:14.4241172Z ##[endgroup]
+2026-09-30T11:41:14.4250569Z ##[group]Fetching the repository
+2026-09-30T11:41:14.4251943Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2f39f42ba92541356ff3101bfcecac43357e7d1f:refs/remotes/origin/master
+2026-09-30T11:41:14.7653176Z From https://github.com/MrDarkRed/cs
+2026-09-30T11:41:14.7672297Z  * [new ref]         2f39f42ba92541356ff3101bfcecac43357e7d1f -> origin/master
+2026-09-30T11:41:14.7675431Z ##[endgroup]
+2026-09-30T11:41:14.7676486Z ##[group]Determining the checkout info
+2026-09-30T11:41:14.7677662Z ##[endgroup]
+2026-09-30T11:41:14.7678339Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T11:41:14.7742460Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T11:41:14.7818659Z ##[group]Checking out the ref
+2026-09-30T11:41:14.7827971Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-09-30T11:41:14.8210176Z Reset branch 'master'
+2026-09-30T11:41:14.8216176Z branch 'master' set up to track 'origin/master'.
+2026-09-30T11:41:14.8226831Z ##[endgroup]
+2026-09-30T11:41:14.8276079Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T11:41:14.8306175Z 2f39f42ba92541356ff3101bfcecac43357e7d1f
+2026-09-30T11:41:14.8772955Z ##[group]Run actions/checkout@v4
+2026-09-30T11:41:14.8774343Z with:
+2026-09-30T11:41:14.8775042Z   ref: builds
+2026-09-30T11:41:14.8775767Z   path: builds
+2026-09-30T11:41:14.8776545Z   repository: MrDarkRed/cs
+2026-09-30T11:41:14.8786636Z   token: ***
+2026-09-30T11:41:14.8787390Z   ssh-strict: true
+2026-09-30T11:41:14.8788166Z   ssh-user: git
+2026-09-30T11:41:14.8788946Z   persist-credentials: true
+2026-09-30T11:41:14.8789832Z   clean: true
+2026-09-30T11:41:14.8790623Z   sparse-checkout-cone-mode: true
+2026-09-30T11:41:14.8791605Z   fetch-depth: 1
+2026-09-30T11:41:14.8792371Z   fetch-tags: false
+2026-09-30T11:41:14.8793171Z   show-progress: true
+2026-09-30T11:41:14.8794201Z   lfs: false
+2026-09-30T11:41:14.8794966Z   submodules: false
+2026-09-30T11:41:14.8795816Z   set-safe-directory: true
+2026-09-30T11:41:14.8796768Z   allow-unsafe-pr-checkout: false
+2026-09-30T11:41:14.8797736Z ##[endgroup]
+2026-09-30T11:41:14.9725583Z Syncing repository: MrDarkRed/cs
+2026-09-30T11:41:14.9728949Z ##[group]Getting Git version info
+2026-09-30T11:41:14.9731449Z Working directory is '/home/runner/work/cs/cs/builds'
+2026-09-30T11:41:14.9766502Z [command]/usr/bin/git version
+2026-09-30T11:41:14.9823181Z git version 2.55.0
+2026-09-30T11:41:14.9854623Z ##[endgroup]
+2026-09-30T11:41:14.9865922Z Temporarily overriding HOME='/home/runner/work/_temp/9bb308a8-c151-41de-9797-71d344030f4b' before making global git config changes
+2026-09-30T11:41:14.9880443Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:41:14.9884838Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/builds
+2026-09-30T11:41:14.9928052Z ##[group]Initializing the repository
+2026-09-30T11:41:14.9930442Z [command]/usr/bin/git init /home/runner/work/cs/cs/builds
+2026-09-30T11:41:14.9967826Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T11:41:14.9979060Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T11:41:14.9983658Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T11:41:14.9987433Z hint: call:
+2026-09-30T11:41:14.9988746Z hint:
+2026-09-30T11:41:14.9990251Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T11:41:14.9992217Z hint:
+2026-09-30T11:41:14.9994494Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T11:41:14.9998054Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T11:41:15.0003132Z hint:
+2026-09-30T11:41:15.0004625Z hint: 	git branch -m <name>
+2026-09-30T11:41:15.0006041Z hint:
+2026-09-30T11:41:15.0008058Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T11:41:15.0011413Z Initialized empty Git repository in /home/runner/work/cs/cs/builds/.git/
+2026-09-30T11:41:15.0016553Z [command]/usr/bin/git remote add origin https://github.com/MrDarkRed/cs
+2026-09-30T11:41:15.0039032Z ##[endgroup]
+2026-09-30T11:41:15.0041711Z ##[group]Disabling automatic garbage collection
+2026-09-30T11:41:15.0044433Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T11:41:15.0084630Z ##[endgroup]
+2026-09-30T11:41:15.0087008Z ##[group]Setting up auth
+2026-09-30T11:41:15.0090536Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:41:15.0136650Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:41:15.0484090Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:41:15.0598973Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:41:15.0901276Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:41:15.0947377Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:41:15.1219856Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T11:41:15.1265654Z ##[endgroup]
+2026-09-30T11:41:15.1267322Z ##[group]Fetching the repository
+2026-09-30T11:41:15.1279238Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/builds*:refs/remotes/origin/builds* +refs/tags/builds*:refs/tags/builds*
+2026-09-30T11:41:15.4471100Z From https://github.com/MrDarkRed/cs
+2026-09-30T11:41:15.4472354Z  * [new branch]      builds     -> origin/builds
+2026-09-30T11:41:15.4477879Z ##[endgroup]
+2026-09-30T11:41:15.4479296Z ##[group]Determining the checkout info
+2026-09-30T11:41:15.4487269Z [command]/usr/bin/git branch --list --remote origin/builds
+2026-09-30T11:41:15.4517490Z   origin/builds
+2026-09-30T11:41:15.4523176Z ##[endgroup]
+2026-09-30T11:41:15.4528268Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T11:41:15.4573395Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T11:41:15.4612331Z ##[group]Checking out the ref
+2026-09-30T11:41:15.4617773Z [command]/usr/bin/git checkout --progress --force -B builds refs/remotes/origin/builds
+2026-09-30T11:41:15.4662425Z Switched to a new branch 'builds'
+2026-09-30T11:41:15.4666317Z branch 'builds' set up to track 'origin/builds'.
+2026-09-30T11:41:15.4671471Z ##[endgroup]
+2026-09-30T11:41:15.4709826Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T11:41:15.4742103Z a89531e6f597283312aa5f5c9cfdc7752fb2cd1b
+2026-09-30T11:41:15.4900798Z ##[group]Run rm -f $GITHUB_WORKSPACE/builds/*.cs3 || true
+2026-09-30T11:41:15.4901813Z [36;1mrm -f $GITHUB_WORKSPACE/builds/*.cs3 || true[0m
+2026-09-30T11:41:15.5157317Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:41:15.5158016Z ##[endgroup]
+2026-09-30T11:41:15.5430626Z ##[group]Run actions/setup-java@v4
+2026-09-30T11:41:15.5431313Z with:
+2026-09-30T11:41:15.5431838Z   distribution: temurin
+2026-09-30T11:41:15.5432408Z   java-version: 17
+2026-09-30T11:41:15.5432956Z   java-package: jdk
+2026-09-30T11:41:15.5433517Z   check-latest: false
+2026-09-30T11:41:15.5434351Z   server-id: github
+2026-09-30T11:41:15.5434947Z   server-username: GITHUB_ACTOR
+2026-09-30T11:41:15.5435582Z   server-password: GITHUB_TOKEN
+2026-09-30T11:41:15.5436199Z   overwrite-settings: true
+2026-09-30T11:41:15.5436794Z   job-status: success
+2026-09-30T11:41:15.5440144Z   token: ***
+2026-09-30T11:41:15.5440719Z ##[endgroup]
+2026-09-30T11:41:15.7088672Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-09-30T11:41:15.7098032Z ##[group]Installed distributions
+2026-09-30T11:41:15.7129901Z Resolved Java 17.0.20+1 from tool-cache
+2026-09-30T11:41:15.7130684Z Setting Java 17.0.20+1 as the default
+2026-09-30T11:41:15.7142192Z (node:2414) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T11:41:15.7144708Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T11:41:15.7146617Z Creating toolchains.xml for JDK version 17 from temurin
+2026-09-30T11:41:15.7223209Z Writing to /home/runner/.m2/toolchains.xml
+2026-09-30T11:41:15.7224456Z 
+2026-09-30T11:41:15.7224953Z Java configuration:
+2026-09-30T11:41:15.7226079Z   Distribution: temurin
+2026-09-30T11:41:15.7227166Z   Version: 17.0.20+1
+2026-09-30T11:41:15.7228545Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:41:15.7229524Z 
+2026-09-30T11:41:15.7230602Z ##[endgroup]
+2026-09-30T11:41:15.7243110Z Creating settings.xml with server-id: github
+2026-09-30T11:41:15.7282830Z Writing to /home/runner/.m2/settings.xml
+2026-09-30T11:41:15.7473699Z ##[group]Run echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+2026-09-30T11:41:15.7475568Z [36;1mecho "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV[0m
+2026-09-30T11:41:15.7477132Z [36;1mecho "ANDROID_SDK_ROOT=/usr/local/lib/android/sdk" >> $GITHUB_ENV[0m
+2026-09-30T11:41:15.7564938Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:41:15.7565938Z env:
+2026-09-30T11:41:15.7566693Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:41:15.7567764Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:41:15.7568634Z ##[endgroup]
+2026-09-30T11:41:15.7754742Z ##[group]Run cd $GITHUB_WORKSPACE/src
+2026-09-30T11:41:15.7755534Z [36;1mcd $GITHUB_WORKSPACE/src[0m
+2026-09-30T11:41:15.7756187Z [36;1mchmod +x gradlew[0m
+2026-09-30T11:41:15.7756880Z [36;1m./gradlew make makePluginsJson --no-daemon[0m
+2026-09-30T11:41:15.7757743Z [36;1mcp **/build/*.cs3 $GITHUB_WORKSPACE/builds 2>/dev/null || true[0m
+2026-09-30T11:41:15.7758955Z [36;1mcp build/plugins.json $GITHUB_WORKSPACE/builds 2>/dev/null || cp plugins.json $GITHUB_WORKSPACE/builds 2>/dev/null || true[0m
+2026-09-30T11:41:15.7823099Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:41:15.7823729Z env:
+2026-09-30T11:41:15.7824614Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:41:15.7825594Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:41:15.7826458Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-30T11:41:15.7827192Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-30T11:41:15.7827909Z ##[endgroup]
+2026-09-30T11:41:16.4273563Z Downloading https://services.gradle.org/distributions/gradle-8.12-bin.zip
+2026-09-30T11:41:19.0865989Z ..................................................................................................................................
+2026-09-30T11:41:19.0873575Z Unzipping /home/runner/.gradle/wrapper/dists/gradle-8.12-bin/cetblhg4pflnnks72fxwobvgv/gradle-8.12-bin.zip to /home/runner/.gradle/wrapper/dists/gradle-8.12-bin/cetblhg4pflnnks72fxwobvgv
+2026-09-30T11:41:19.8321667Z Set executable permissions for: /home/runner/.gradle/wrapper/dists/gradle-8.12-bin/cetblhg4pflnnks72fxwobvgv/gradle-8.12/bin/gradle
+2026-09-30T11:41:20.5045563Z 
+2026-09-30T11:41:20.5051028Z Welcome to Gradle 8.12!
+2026-09-30T11:41:20.5051477Z 
+2026-09-30T11:41:20.5051700Z Here are the highlights of this release:
+2026-09-30T11:41:20.5057274Z  - Enhanced error and warning reporting with the Problems API
+2026-09-30T11:41:20.5058413Z  - File-system watching support on Alpine Linux
+2026-09-30T11:41:20.5059615Z  - Build and test Swift 6 libraries and apps
+2026-09-30T11:41:20.5060416Z 
+2026-09-30T11:41:20.5061148Z For more details see https://docs.gradle.org/8.12/release-notes.html
+2026-09-30T11:41:20.5062057Z 
+2026-09-30T11:41:20.6048764Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.12/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-09-30T11:41:22.1036124Z Daemon will be stopped at the end of the build 
+2026-09-30T11:41:55.1055833Z > Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-09-30T11:42:06.4054645Z > Task :buildSrc:pluginDescriptors
+2026-09-30T11:42:06.5047727Z > Task :buildSrc:processResources
+2026-09-30T11:42:16.5035878Z > Task :buildSrc:compileKotlin
+2026-09-30T11:42:16.5036910Z > Task :buildSrc:compileJava NO-SOURCE
+2026-09-30T11:42:16.5038011Z > Task :buildSrc:compileGroovy NO-SOURCE
+2026-09-30T11:42:16.5070188Z > Task :buildSrc:classes
+2026-09-30T11:42:16.5075769Z > Task :buildSrc:jar
+2026-09-30T11:42:41.8038104Z 
+2026-09-30T11:42:41.8049410Z > Configure project :AnimeciX
+2026-09-30T11:42:41.8050357Z Fetching JAR: cloudstream.jar
+2026-09-30T11:42:54.5063577Z 
+2026-09-30T11:42:54.5075211Z > Task :AnimeciX:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-09-30T11:42:54.5135313Z > Task :AnimeciX:preBuild UP-TO-DATE
+2026-09-30T11:42:54.5136213Z > Task :AnimeciX:preDebugBuild UP-TO-DATE
+2026-09-30T11:42:54.6037508Z > Task :AnimeciX:generateDebugResValues
+2026-09-30T11:42:54.6038078Z > Task :AnimeciX:generateDebugResources
+2026-09-30T11:42:54.6038413Z > Task :AnimeciX:packageDebugResources
+2026-09-30T11:42:55.7065888Z > Task :BelgeselX:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-09-30T11:42:55.7095008Z > Task :BelgeselX:preBuild UP-TO-DATE
+2026-09-30T11:42:55.7099331Z > Task :BelgeselX:preDebugBuild UP-TO-DATE
+2026-09-30T11:42:55.7107925Z > Task :BelgeselX:generateDebugResValues
+2026-09-30T11:42:55.7109137Z > Task :BelgeselX:generateDebugResources
+2026-09-30T11:42:55.7109928Z > Task :BelgeselX:packageDebugResources
+2026-09-30T11:42:55.7110818Z > Task :CanliTV:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-09-30T11:42:55.7111716Z > Task :CanliTV:preBuild UP-TO-DATE
+2026-09-30T11:42:55.7112364Z > Task :CanliTV:preDebugBuild UP-TO-DATE
+2026-09-30T11:42:55.7113061Z > Task :CanliTV:generateDebugResValues
+2026-09-30T11:42:55.7144633Z > Task :CanliTV:generateDebugResources
+2026-09-30T11:42:55.7171800Z > Task :CanliTV:packageDebugResources
+2026-09-30T11:42:55.7172684Z > Task :BelgeselX:parseDebugLocalResources
+2026-09-30T11:42:55.7173423Z > Task :AnimeciX:parseDebugLocalResources
+2026-09-30T11:42:55.7174444Z > Task :CanliTV:parseDebugLocalResources
+2026-09-30T11:42:55.8048594Z > Task :CizgiMax:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-09-30T11:42:55.8049795Z > Task :CizgiMax:preBuild UP-TO-DATE
+2026-09-30T11:42:55.8050631Z > Task :CizgiMax:preDebugBuild UP-TO-DATE
+2026-09-30T11:42:55.8051450Z > Task :CizgiMax:generateDebugResValues
+2026-09-30T11:42:55.8052255Z > Task :CizgiMax:generateDebugResources
+2026-09-30T11:42:55.8052999Z > Task :CizgiMax:packageDebugResources
+2026-09-30T11:42:55.8053756Z > Task :CanliTV:generateDebugRFile
+2026-09-30T11:42:55.8054979Z > Task :BelgeselX:generateDebugRFile
+2026-09-30T11:42:55.8055713Z > Task :AnimeciX:generateDebugRFile
+2026-09-30T11:42:55.8056449Z > Task :CizgiMax:parseDebugLocalResources
+2026-09-30T11:43:03.4085150Z > Task :CizgiMax:generateDebugRFile
+2026-09-30T11:43:05.1061909Z 
+2026-09-30T11:43:05.1127469Z > Task :AnimeciX:compileDebugKotlin
+2026-09-30T11:43:05.1182038Z e: Incompatible classes were found in dependencies. Remove them from the classpath or use '-Xskip-metadata-version-check' to suppress errors
+2026-09-30T11:43:05.1217044Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/CloudStream_library.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.1275976Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/app.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.1339933Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:11:18 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1385419Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.1456724Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:17:41 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1465421Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.1526172Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:17:47 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1549370Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.1598805Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:23:29 Unresolved reference 'mainPageOf'.
+2026-09-30T11:43:05.1627259Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:28:58 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1633808Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.1651400Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:28:76 Class 'com.lagradost.cloudstream3.HomePageResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1654810Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/HomePageResponse.class
+2026-09-30T11:43:05.1656897Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:29:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.1659570Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:30:16 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1662643Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.1666063Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:30:16 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1704081Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.1713380Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:36:58 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.1715790Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:37:13 Unresolved reference 'newAnimeSearchResponse'.
+2026-09-30T11:43:05.1717758Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:38:23 Unresolved reference 'title'.
+2026-09-30T11:43:05.1719487Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:39:51 Unresolved reference 'id'.
+2026-09-30T11:43:05.1721187Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:39:71 Unresolved reference 'id'.
+2026-09-30T11:43:05.1724047Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:40:17 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1727582Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.1729680Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:42:22 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.1731646Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:42:34 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.1733428Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:42:51 Unresolved reference 'poster'.
+2026-09-30T11:43:05.1736396Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:44:21 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1739509Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.1741938Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:46:16 Unresolved reference 'newHomePageResponse'.
+2026-09-30T11:43:05.1772738Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:46:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1776166Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.1779249Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:46:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1782309Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.1785559Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:49:54 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1788611Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.1790560Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:50:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.1793296Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:50:109 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1796689Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.1805775Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:52:39 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.1808015Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:53:13 Unresolved reference 'newAnimeSearchResponse'.
+2026-09-30T11:43:05.1809761Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:54:23 Unresolved reference 'title'.
+2026-09-30T11:43:05.1811366Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:55:51 Unresolved reference 'id'.
+2026-09-30T11:43:05.1813181Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:55:71 Unresolved reference 'id'.
+2026-09-30T11:43:05.1815983Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:56:17 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1818845Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.1820818Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:58:22 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.1822472Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:58:34 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.1824246Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:58:51 Unresolved reference 'poster'.
+2026-09-30T11:43:05.1833538Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:63:59 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1836789Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.1839820Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:65:45 Class 'com.lagradost.cloudstream3.LoadResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1842729Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LoadResponse.class
+2026-09-30T11:43:05.1844856Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:66:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.1847352Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:72:38 Class 'com.lagradost.cloudstream3.Episode' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1850207Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/Episode.class
+2026-09-30T11:43:05.1852325Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:76:42 Method 'iterator()' is ambiguous for this expression. Applicable candidates:
+2026-09-30T11:43:05.1865863Z fun <T> Enumeration<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.1908945Z fun <T> Iterator<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.1914544Z fun <K, V> Map<out K, V>.iterator(): Iterator<Map.Entry<K, V>>
+2026-09-30T11:43:05.1925004Z fun <K, V> MutableMap<K, V>.iterator(): MutableIterator<MutableMap.MutableEntry<K, V>>
+2026-09-30T11:43:05.1926232Z fun CharSequence.iterator(): CharIterator
+2026-09-30T11:43:05.1926998Z fun BufferedInputStream.iterator(): ByteIterator
+2026-09-30T11:43:05.1928152Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:77:41 Unresolved reference 'get'.
+2026-09-30T11:43:05.1929911Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:78:45 Method 'iterator()' is ambiguous for this expression. Applicable candidates:
+2026-09-30T11:43:05.1931199Z fun <T> Enumeration<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.1931774Z fun <T> Iterator<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.1932579Z fun <K, V> Map<out K, V>.iterator(): Iterator<Map.Entry<K, V>>
+2026-09-30T11:43:05.1933415Z fun <K, V> MutableMap<K, V>.iterator(): MutableIterator<MutableMap.MutableEntry<K, V>>
+2026-09-30T11:43:05.1934452Z fun CharSequence.iterator(): CharIterator
+2026-09-30T11:43:05.1935073Z fun BufferedInputStream.iterator(): ByteIterator
+2026-09-30T11:43:05.1937175Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:79:21 Class 'com.lagradost.cloudstream3.Episode' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1940139Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/Episode.class
+2026-09-30T11:43:05.1942194Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:79:34 Unresolved reference 'newEpisode'.
+2026-09-30T11:43:05.1944241Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:81:30 Unresolved reference 'season'.
+2026-09-30T11:43:05.1946084Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:82:30 Unresolved reference 'episode'.
+2026-09-30T11:43:05.1948824Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:88:17 Class 'com.lagradost.cloudstream3.Episode' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1951983Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/Episode.class
+2026-09-30T11:43:05.1954265Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:88:30 Unresolved reference 'newEpisode'.
+2026-09-30T11:43:05.1956036Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:88:71 Unresolved reference 'url'.
+2026-09-30T11:43:05.1962893Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:90:26 Unresolved reference 'season'.
+2026-09-30T11:43:05.1964903Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:91:26 Unresolved reference 'episode'.
+2026-09-30T11:43:05.1966710Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:97:16 Unresolved reference 'newTvSeriesLoadResponse'.
+2026-09-30T11:43:05.1969487Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:100:13 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1972412Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.1974566Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:103:18 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.1976517Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:103:30 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.1978239Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:104:18 Unresolved reference 'year'.
+2026-09-30T11:43:05.1979931Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:105:18 Unresolved reference 'plot'.
+2026-09-30T11:43:05.1981601Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:106:18 Unresolved reference 'tags'.
+2026-09-30T11:43:05.1983436Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:106:56 Unresolved reference 'it'.
+2026-09-30T11:43:05.1985334Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:107:18 Unresolved reference 'rating'.
+2026-09-30T11:43:05.1988157Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:108:49 Class 'com.lagradost.cloudstream3.Actor' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1991195Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/Actor.class
+2026-09-30T11:43:05.1994397Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:108:51 Class 'com.lagradost.cloudstream3.Actor' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.1997516Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/Actor.class
+2026-09-30T11:43:05.1999550Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:108:57 Unresolved reference 'it'.
+2026-09-30T11:43:05.2001292Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:108:66 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2002996Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:108:77 Unresolved reference 'it'.
+2026-09-30T11:43:05.2005911Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:113:89 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2009008Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.2012174Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:113:123 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2015351Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2017209Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:115:30 Unresolved reference 'get'.
+2026-09-30T11:43:05.2018717Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciX.kt:118:9 Unresolved reference 'loadExtractor'.
+2026-09-30T11:43:05.2021441Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:7:2 Class 'com.lagradost.cloudstream3.plugins.CloudstreamPlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2024897Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/CloudstreamPlugin.class
+2026-09-30T11:43:05.2028173Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:8:23 Class 'com.lagradost.cloudstream3.plugins.Plugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2031546Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/Plugin.class
+2026-09-30T11:43:05.2034846Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2038030Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.2041343Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2043401Z 
+2026-09-30T11:43:05.2044895Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.2048145Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2051493Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.2055173Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/AnimeciXPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2058452Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.2062429Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:10:23 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2066073Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.2069301Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:15:83 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2072652Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.2076109Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:15:117 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2079847Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2084546Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:21:23 Unresolved reference 'get'.
+2026-09-30T11:43:05.2087493Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:21:73 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2090801Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2093159Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:23:27 Method 'iterator()' is ambiguous for this expression. Applicable candidates:
+2026-09-30T11:43:05.2094828Z fun <T> Enumeration<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.2095441Z fun <T> Iterator<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.2096102Z fun <K, V> Map<out K, V>.iterator(): Iterator<Map.Entry<K, V>>
+2026-09-30T11:43:05.2096965Z fun <K, V> MutableMap<K, V>.iterator(): MutableIterator<MutableMap.MutableEntry<K, V>>
+2026-09-30T11:43:05.2097881Z fun CharSequence.iterator(): CharIterator
+2026-09-30T11:43:05.2098525Z fun BufferedInputStream.iterator(): ByteIterator
+2026-09-30T11:43:05.2100846Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:24:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2104340Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2107635Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:25:17 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2110970Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2114468Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:25:17 Class 'com.lagradost.cloudstream3.utils.ExtractorLinkType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2117825Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLinkType.class
+2026-09-30T11:43:05.2120126Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:30:31 Unresolved reference 'getQualityFromName'.
+2026-09-30T11:43:05.2122672Z e: file:///home/runner/work/cs/cs/src/AnimeciX/src/main/kotlin/com/keyiflerolsun/TauVideoExtractor.kt:31:31 Unresolved reference 'INFER_TYPE'.
+2026-09-30T11:43:05.2124725Z e: Incompatible classes were found in dependencies. Remove them from the classpath or use '-Xskip-metadata-version-check' to suppress errors
+2026-09-30T11:43:05.2127588Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/CloudStream_library.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.2131484Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/app.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.2135324Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:11:19 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2138369Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.2141396Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:17:41 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2144514Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2148117Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:17:47 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2151043Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2153135Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:19:29 Unresolved reference 'mainPageOf'.
+2026-09-30T11:43:05.2156057Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:41:58 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2159201Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2162303Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:41:76 Class 'com.lagradost.cloudstream3.HomePageResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2165855Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/HomePageResponse.class
+2026-09-30T11:43:05.2167923Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:42:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2170631Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:42:35 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2174165Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2175643Z > Task :AnimeciX:compileDebugKotlin FAILED
+2026-09-30T11:43:05.2178030Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:42:35 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2181157Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2184484Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:43:76 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2187589Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2189608Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:43:78 Unresolved reference 'it'.
+2026-09-30T11:43:05.2192313Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:43:78 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2195445Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2197553Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:45:16 Unresolved reference 'newHomePageResponse'.
+2026-09-30T11:43:05.2200401Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:45:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2203502Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2206888Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:45:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2210013Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2213107Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:55:43 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2216345Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2218792Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:57:25 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2220486Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:58:25 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2222286Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:60:16 Unresolved reference 'newTvSeriesSearchResponse'.
+2026-09-30T11:43:05.2225444Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:60:55 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2228467Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2230549Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:60:82 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.2233304Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:63:54 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2236654Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2238747Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:66:33 Unresolved reference 'get'.
+2026-09-30T11:43:05.2240423Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:70:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2243135Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:77:45 Class 'com.lagradost.cloudstream3.TvSeriesSearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2246500Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvSeriesSearchResponse.class
+2026-09-30T11:43:05.2249721Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:85:13 Class 'com.lagradost.cloudstream3.TvSeriesSearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2252938Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvSeriesSearchResponse.class
+2026-09-30T11:43:05.2255372Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:85:33 Unresolved reference 'newTvSeriesSearchResponse'.
+2026-09-30T11:43:05.2258139Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:85:69 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2261256Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2263607Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:86:22 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.2264910Z 
+2026-09-30T11:43:05.2266795Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:93:59 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2269908Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2273168Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:95:45 Class 'com.lagradost.cloudstream3.LoadResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2276388Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LoadResponse.class
+2026-09-30T11:43:05.2278429Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:96:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2280148Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:99:27 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2281830Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:101:99 Unresolved reference 'it'.
+2026-09-30T11:43:05.2283453Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:105:30 Unresolved reference 'it'.
+2026-09-30T11:43:05.2285335Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:106:30 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2287030Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:106:41 Unresolved reference 'it'.
+2026-09-30T11:43:05.2288641Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:108:30 Unresolved reference 'it'.
+2026-09-30T11:43:05.2290301Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:116:13 Unresolved reference 'newEpisode'.
+2026-09-30T11:43:05.2291997Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:118:22 Unresolved reference 'season'.
+2026-09-30T11:43:05.2293672Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:119:22 Unresolved reference 'episode'.
+2026-09-30T11:43:05.2294942Z > Task :BelgeselX:compileDebugKotlin FAILED
+2026-09-30T11:43:05.2296205Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:123:16 Unresolved reference 'newTvSeriesLoadResponse'.
+2026-09-30T11:43:05.2298994Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:123:52 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2301937Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2304138Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:124:18 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.2305872Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:125:18 Unresolved reference 'plot'.
+2026-09-30T11:43:05.2307514Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:126:18 Unresolved reference 'tags'.
+2026-09-30T11:43:05.2310410Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:130:89 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2313531Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.2317018Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:130:123 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2320207Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2322277Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:132:26 Unresolved reference 'get'.
+2026-09-30T11:43:05.2324123Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:137:38 Unresolved reference 'get'.
+2026-09-30T11:43:05.2326888Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:151:21 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2330036Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2333120Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:152:25 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2336490Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2339688Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:152:25 Class 'com.lagradost.cloudstream3.utils.ExtractorLinkType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2342906Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLinkType.class
+2026-09-30T11:43:05.2344411Z 
+2026-09-30T11:43:05.2345310Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:157:39 Unresolved reference 'getQualityFromName'.
+2026-09-30T11:43:05.2347099Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:158:39 Unresolved reference 'INFER_TYPE'.
+2026-09-30T11:43:05.2348823Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:163:30 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2350567Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselX.kt:166:17 Unresolved reference 'loadExtractor'.
+2026-09-30T11:43:05.2353419Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:7:2 Class 'com.lagradost.cloudstream3.plugins.CloudstreamPlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2357111Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/CloudstreamPlugin.class
+2026-09-30T11:43:05.2360388Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:8:24 Class 'com.lagradost.cloudstream3.plugins.Plugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2363715Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/Plugin.class
+2026-09-30T11:43:05.2370448Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2373517Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.2376805Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2380031Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.2383168Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2386661Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.2389924Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/BelgeselXPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2393107Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.2396553Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:10:28 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2399760Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.2402935Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:15:83 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2406331Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.2409819Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:15:117 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2413080Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2415638Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:20:29 Unresolved reference 'get'.
+2026-09-30T11:43:05.2418627Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:24:103 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2421953Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2426147Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:25:25 Class 'com.lagradost.cloudstream3.utils.AppUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2428440Z > Task :CizgiMax:compileDebugKotlin FAILED
+2026-09-30T11:43:05.2428785Z 
+2026-09-30T11:43:05.2428979Z > Task :CanliTV:compileDebugKotlin FAILED
+2026-09-30T11:43:05.2430495Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/AppUtils.class
+2026-09-30T11:43:05.2433303Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:25:34 Cannot inline bytecode built with JVM target 11 into bytecode that is being built with JVM target 1.8. Please specify proper '-jvm-target' option.
+2026-09-30T11:43:05.2437216Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:25:84 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2440480Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2443748Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:42:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2447198Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2450512Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:43:17 'constructor(source: String, name: String, url: String, referer: String, quality: Int, isM3u8: Boolean = ..., headers: Map<String, String> = ..., extractorData: String? = ...): ExtractorLink' is deprecated. Use newExtractorLink.
+2026-09-30T11:43:05.2485002Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:43:17 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2488639Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2490788Z e: file:///home/runner/work/cs/cs/src/BelgeselX/src/main/kotlin/com/keyiflerolsun/OdnoklassnikiExtractor.kt:48:31 Unresolved reference 'getQualityFromName'.
+2026-09-30T11:43:05.2492887Z e: Incompatible classes were found in dependencies. Remove them from the classpath or use '-Xskip-metadata-version-check' to suppress errors
+2026-09-30T11:43:05.2495874Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/CloudStream_library.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.2499524Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/app.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.2503235Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:10:23 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2506573Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.2509701Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:15:83 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2512802Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.2546317Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:15:117 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2549616Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2551974Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:18:27 Unresolved reference 'get'.
+2026-09-30T11:43:05.2555336Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:20:117 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2558501Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2562044Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:23:28 Class 'com.lagradost.cloudstream3.extractors.helper.AesHelper' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2565866Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/extractors/helper/AesHelper.class
+2026-09-30T11:43:05.2569257Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:23:132 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2572413Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2605886Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:28:9 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2609107Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2612257Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:29:13 'constructor(source: String, name: String, url: String, referer: String, quality: Int, isM3u8: Boolean = ..., headers: Map<String, String> = ..., extractorData: String? = ...): ExtractorLink' is deprecated. Use newExtractorLink.
+2026-09-30T11:43:05.2616288Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:29:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2619488Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.2622666Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:32:44 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2626068Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.2629185Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:34:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2632281Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.2663670Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiDuoExtractor.kt:34:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2666873Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.2670085Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:10:18 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2672856Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.2676099Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:16:41 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2679053Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2681972Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:16:47 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2715319Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2717426Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:18:29 Unresolved reference 'mainPageOf'.
+2026-09-30T11:43:05.2720248Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:28:58 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2723417Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2726776Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:28:76 Class 'com.lagradost.cloudstream3.HomePageResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2729923Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/HomePageResponse.class
+2026-09-30T11:43:05.2731960Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:29:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2734843Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:29:66 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2737998Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2741214Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:29:66 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2763414Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2767072Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:30:75 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2770146Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2772303Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:30:77 Unresolved reference 'it'.
+2026-09-30T11:43:05.2775198Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:30:77 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2778253Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2780347Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:32:16 Unresolved reference 'newHomePageResponse'.
+2026-09-30T11:43:05.2783106Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:32:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2796396Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2799419Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:32:36 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2802418Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.2805602Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:35:43 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2808590Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2810555Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:37:25 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2812149Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:38:25 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2814015Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:40:16 Unresolved reference 'newTvSeriesSearchResponse'.
+2026-09-30T11:43:05.2816677Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:40:55 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2819535Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2821668Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:40:78 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.2854577Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:43:54 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2857905Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2859886Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:44:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2862499Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:44:131 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2896288Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2898478Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:46:38 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.2900274Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:47:24 Unresolved reference 'sName'.
+2026-09-30T11:43:05.2901824Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:47:59 Unresolved reference 'sName'.
+2026-09-30T11:43:05.2903359Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:47:94 Unresolved reference 'sName'.
+2026-09-30T11:43:05.2905069Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:47:129 Unresolved reference 'sName'.
+2026-09-30T11:43:05.2906739Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:51:13 Unresolved reference 'newTvSeriesSearchResponse'.
+2026-09-30T11:43:05.2908409Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:52:24 Unresolved reference 'sName'.
+2026-09-30T11:43:05.2909947Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:53:17 Unresolved reference 'fixUrl'.
+2026-09-30T11:43:05.2911478Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:53:31 Unresolved reference 'sLink'.
+2026-09-30T11:43:05.2914168Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:54:17 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2917040Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.2918920Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:56:22 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.2920528Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:56:34 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2922089Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:56:52 Unresolved reference 'sImage'.
+2026-09-30T11:43:05.2954941Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:61:59 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2958238Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.2961400Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:63:45 Class 'com.lagradost.cloudstream3.LoadResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.2964717Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LoadResponse.class
+2026-09-30T11:43:05.2966617Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:64:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.2968173Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:67:27 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2969718Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:69:76 Unresolved reference 'it'.
+2026-09-30T11:43:05.2971255Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:70:83 Unresolved reference 'toRatingInt'.
+2026-09-30T11:43:05.2972795Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:74:30 Unresolved reference 'it'.
+2026-09-30T11:43:05.2974515Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:75:30 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.2976031Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:75:41 Unresolved reference 'it'.
+2026-09-30T11:43:05.2977502Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:77:30 Unresolved reference 'it'.
+2026-09-30T11:43:05.2979036Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:80:13 Unresolved reference 'newEpisode'.
+2026-09-30T11:43:05.2980580Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:82:22 Unresolved reference 'season'.
+2026-09-30T11:43:05.2982091Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:83:22 Unresolved reference 'episode'.
+2026-09-30T11:43:05.2983739Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:87:16 Unresolved reference 'newTvSeriesLoadResponse'.
+2026-09-30T11:43:05.3016728Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:87:52 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3019712Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3021652Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:88:18 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.3023208Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:89:18 Unresolved reference 'plot'.
+2026-09-30T11:43:05.3024934Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:90:18 Unresolved reference 'tags'.
+2026-09-30T11:43:05.3026467Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:91:18 Unresolved reference 'rating'.
+2026-09-30T11:43:05.3029407Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:95:89 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3032322Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.3035771Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:95:123 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3038851Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3040824Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:97:28 Unresolved reference 'get'.
+2026-09-30T11:43:05.3042396Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:100:26 Unresolved reference 'fixUrlNull'.
+2026-09-30T11:43:05.3065688Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:100:37 Unresolved reference 'it'.
+2026-09-30T11:43:05.3067425Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMax.kt:103:13 Unresolved reference 'loadExtractor'.
+2026-09-30T11:43:05.3070299Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:7:2 Class 'com.lagradost.cloudstream3.plugins.CloudstreamPlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3073591Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/CloudstreamPlugin.class
+2026-09-30T11:43:05.3077011Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:8:23 Class 'com.lagradost.cloudstream3.plugins.Plugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3080149Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/Plugin.class
+2026-09-30T11:43:05.3083208Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3116673Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.3119874Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3123104Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.3126500Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3130015Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3133436Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:11:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3137036Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.3140367Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:12:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3143705Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3169500Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:12:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3172716Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.3176157Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:13:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3179368Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3182553Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:13:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3185948Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.3189173Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:14:9 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3192373Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3195782Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/CizgiMaxPlugin.kt:14:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3199468Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.3201638Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:7:35 Unresolved reference 'app'.
+2026-09-30T11:43:05.3203448Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:10:41 Unresolved reference 'INFER_TYPE'.
+2026-09-30T11:43:05.3206918Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:14:20 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3210267Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3213517Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:19:83 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3217026Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.3220225Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:19:117 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3223462Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3225806Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:24:32 Unresolved reference 'get'.
+2026-09-30T11:43:05.3228568Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:27:23 Class 'com.lagradost.cloudstream3.utils.StringUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3231701Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/StringUtils.class
+2026-09-30T11:43:05.3234941Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:31:9 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3238050Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3241390Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:32:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3245066Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3248752Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:32:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLinkType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3252201Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLinkType.class
+2026-09-30T11:43:05.3256023Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:37:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3259322Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3262628Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:37:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3266119Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3268780Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/DriveExtractor.kt:38:27 Unresolved reference 'INFER_TYPE'.
+2026-09-30T11:43:05.3271776Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:9:21 Class 'com.lagradost.cloudstream3.utils.ExtractorApi' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3275371Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorApi.class
+2026-09-30T11:43:05.3278649Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:14:83 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3281922Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.3285507Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:14:117 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3288897Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3291102Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:16:27 Unresolved reference 'get'.
+2026-09-30T11:43:05.3294432Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:17:110 Class 'com.lagradost.cloudstream3.ErrorLoadingException' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3298208Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/ErrorLoadingException.class
+2026-09-30T11:43:05.3301572Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:22:9 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3305410Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3308762Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:23:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3311921Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3315490Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:23:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLinkType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3318861Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLinkType.class
+2026-09-30T11:43:05.3322159Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:28:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3325675Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3328800Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:28:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3331754Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3333786Z e: file:///home/runner/work/cs/cs/src/CizgiMax/src/main/kotlin/com/keyiflerolsun/SibNetExtractor.kt:29:27 Unresolved reference 'INFER_TYPE'.
+2026-09-30T11:43:05.3335585Z e: Incompatible classes were found in dependencies. Remove them from the classpath or use '-Xskip-metadata-version-check' to suppress errors
+2026-09-30T11:43:05.3338146Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/CloudStream_library.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.3341960Z e: file:///home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/META-INF/app.kotlin_module Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.4.0, expected version is 2.1.0.
+2026-09-30T11:43:05.3345813Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:12:17 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3349024Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.3352122Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:19:41 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3355282Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3358294Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:19:47 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3361533Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3364843Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:21:58 Class 'com.lagradost.cloudstream3.MainPageRequest' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3368410Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainPageRequest.class
+2026-09-30T11:43:05.3371594Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:21:76 Class 'com.lagradost.cloudstream3.HomePageResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3374855Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/HomePageResponse.class
+2026-09-30T11:43:05.3376936Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:22:58 Unresolved reference 'get'.
+2026-09-30T11:43:05.3378735Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:24:16 Unresolved reference 'newHomePageResponse'.
+2026-09-30T11:43:05.3380505Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:25:22 Unresolved reference 'items'.
+2026-09-30T11:43:05.3382098Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:25:38 Unresolved reference 'it'.
+2026-09-30T11:43:05.3384130Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:25:75 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.3385876Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:26:35 Unresolved reference 'key'.
+2026-09-30T11:43:05.3387409Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:27:35 Unresolved reference 'value'.
+2026-09-30T11:43:05.3389241Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:27:47 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.3390999Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:28:45 Unresolved reference 'url'.
+2026-09-30T11:43:05.3392834Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:29:45 Unresolved reference 'title'.
+2026-09-30T11:43:05.3394618Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:30:45 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3396230Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:31:45 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3397830Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:32:45 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3399668Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:34:21 Unresolved reference 'newLiveSearchResponse'.
+2026-09-30T11:43:05.3402369Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:36:25 Class 'com.lagradost.cloudstream3.utils.AppUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3405574Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/AppUtils.class
+2026-09-30T11:43:05.3408525Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:37:32 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3411466Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3413393Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:39:30 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.3416188Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:45:17 Class 'com.lagradost.cloudstream3.HomePageList' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3419232Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/HomePageList.class
+2026-09-30T11:43:05.3422311Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:51:54 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3425626Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.3427585Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:52:58 Unresolved reference 'get'.
+2026-09-30T11:43:05.3429225Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:54:25 Unresolved reference 'items'.
+2026-09-30T11:43:05.3430753Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:54:40 Unresolved reference 'it'.
+2026-09-30T11:43:05.3432499Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:54:108 Cannot infer type for this parameter. Please specify it explicitly.
+2026-09-30T11:43:05.3434465Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:55:37 Unresolved reference 'url'.
+2026-09-30T11:43:05.3435974Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:56:37 Unresolved reference 'title'.
+2026-09-30T11:43:05.3437798Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:57:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3439394Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:58:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3440990Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:59:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3442648Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:61:13 Unresolved reference 'newLiveSearchResponse'.
+2026-09-30T11:43:05.3445713Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:63:17 Class 'com.lagradost.cloudstream3.utils.AppUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3448739Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/AppUtils.class
+2026-09-30T11:43:05.3451681Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:64:24 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3454861Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3456815Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:66:22 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.3459440Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:73:59 Class 'com.lagradost.cloudstream3.SearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3462459Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SearchResponse.class
+2026-09-30T11:43:05.3465684Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:75:45 Class 'com.lagradost.cloudstream3.LoadResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3469135Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LoadResponse.class
+2026-09-30T11:43:05.3471164Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:83:65 Unresolved reference 'get'.
+2026-09-30T11:43:05.3474090Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:84:45 Class 'com.lagradost.cloudstream3.LiveSearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3477289Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LiveSearchResponse.class
+2026-09-30T11:43:05.3479627Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:86:32 Method 'iterator()' is ambiguous for this expression. Applicable candidates:
+2026-09-30T11:43:05.3480962Z fun <T> Enumeration<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.3481489Z fun <T> Iterator<T>.iterator(): Iterator<T>
+2026-09-30T11:43:05.3482093Z fun <K, V> Map<out K, V>.iterator(): Iterator<Map.Entry<K, V>>
+2026-09-30T11:43:05.3483147Z fun <K, V> MutableMap<K, V>.iterator(): MutableIterator<MutableMap.MutableEntry<K, V>>
+2026-09-30T11:43:05.3484100Z fun CharSequence.iterator(): CharIterator
+2026-09-30T11:43:05.3484651Z fun BufferedInputStream.iterator(): ByteIterator
+2026-09-30T11:43:05.3485738Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:86:32 Unresolved reference 'items'.
+2026-09-30T11:43:05.3488598Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:96:17 Class 'com.lagradost.cloudstream3.LiveSearchResponse' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3491768Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/LiveSearchResponse.class
+2026-09-30T11:43:05.3494187Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:96:37 Unresolved reference 'newLiveSearchResponse'.
+2026-09-30T11:43:05.3496952Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:98:21 Class 'com.lagradost.cloudstream3.utils.AppUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3499958Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/AppUtils.class
+2026-09-30T11:43:05.3502896Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:99:28 Class 'com.lagradost.cloudstream3.TvType' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3506037Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/TvType.class
+2026-09-30T11:43:05.3507998Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:101:26 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.3509727Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:108:16 Unresolved reference 'newLiveStreamLoadResponse'.
+2026-09-30T11:43:05.3511478Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:109:18 Unresolved reference 'posterUrl'.
+2026-09-30T11:43:05.3513065Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:110:18 Unresolved reference 'plot'.
+2026-09-30T11:43:05.3514878Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:111:18 Unresolved reference 'tags'.
+2026-09-30T11:43:05.3516521Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:112:18 Unresolved reference 'recommendations'.
+2026-09-30T11:43:05.3519282Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:116:89 Class 'com.lagradost.cloudstream3.SubtitleFile' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3522299Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/SubtitleFile.class
+2026-09-30T11:43:05.3525579Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:116:123 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3528946Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3530921Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:120:58 Unresolved reference 'get'.
+2026-09-30T11:43:05.3532475Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:121:33 Unresolved reference 'items'.
+2026-09-30T11:43:05.3534221Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:121:47 Unresolved reference 'it'.
+2026-09-30T11:43:05.3537106Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:124:9 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3540273Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3543424Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:125:13 'constructor(source: String, name: String, url: String, referer: String, quality: Int, isM3u8: Boolean = ..., headers: Map<String, String> = ..., extractorData: String? = ...): ExtractorLink' is deprecated. Use newExtractorLink.
+2026-09-30T11:43:05.3547458Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:125:13 Class 'com.lagradost.cloudstream3.utils.ExtractorLink' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3550553Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/ExtractorLink.class
+2026-09-30T11:43:05.3552623Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:129:33 Unresolved reference 'headers'.
+2026-09-30T11:43:05.3554725Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:130:27 Argument type mismatch: actual type is 'kotlin.Any', but 'kotlin.String' was expected.
+2026-09-30T11:43:05.3556632Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:130:33 Unresolved reference 'headers'.
+2026-09-30T11:43:05.3559230Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:131:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3562247Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3565632Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:131:27 Class 'com.lagradost.cloudstream3.utils.Qualities' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3568752Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/Qualities.class
+2026-09-30T11:43:05.3571748Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:143:20 Cannot inline bytecode built with JVM target 11 into bytecode that is being built with JVM target 1.8. Please specify proper '-jvm-target' option.
+2026-09-30T11:43:05.3575207Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:143:20 Class 'com.lagradost.cloudstream3.utils.AppUtils' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3578469Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/utils/AppUtils.class
+2026-09-30T11:43:05.3580446Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:145:62 Unresolved reference 'get'.
+2026-09-30T11:43:05.3582311Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:146:37 Unresolved reference 'items'.
+2026-09-30T11:43:05.3584077Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:146:51 Unresolved reference 'it'.
+2026-09-30T11:43:05.3585625Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:148:37 Unresolved reference 'url'.
+2026-09-30T11:43:05.3587178Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:149:37 Unresolved reference 'title'.
+2026-09-30T11:43:05.3588773Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:150:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3590396Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:151:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3592030Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTV.kt:152:37 Unresolved reference 'attributes'.
+2026-09-30T11:43:05.3595109Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTVPlugin.kt:7:2 Class 'com.lagradost.cloudstream3.plugins.CloudstreamPlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3598389Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/CloudstreamPlugin.class
+2026-09-30T11:43:05.3601572Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTVPlugin.kt:8:22 Class 'com.lagradost.cloudstream3.plugins.Plugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3604888Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/Plugin.class
+2026-09-30T11:43:05.3607934Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTVPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.MainAPI' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3610929Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/MainAPI.class
+2026-09-30T11:43:05.3614952Z e: file:///home/runner/work/cs/cs/src/CanliTV/src/main/kotlin/com/keyiflerolsun/CanliTVPlugin.kt:10:9 Class 'com.lagradost.cloudstream3.plugins.BasePlugin' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.4.0, but the compiler version 2.1.0 can read versions up to 2.2.0.
+2026-09-30T11:43:05.3618317Z The class is loaded from /home/runner/.gradle/caches/8.12/transforms/06e75f468126719ddbda92295d3fff88/transformed/jetified-cloudstream.jar!/com/lagradost/cloudstream3/plugins/BasePlugin.class
+2026-09-30T11:43:05.4044436Z 
+2026-09-30T11:43:05.4045216Z 28 actionable tasks: 28 executed
+2026-09-30T11:43:05.4094716Z FAILURE: Build completed with 4 failures.
+2026-09-30T11:43:05.4154107Z 
+2026-09-30T11:43:05.4174747Z 1: Task failed with an exception.
+2026-09-30T11:43:05.4224476Z -----------
+2026-09-30T11:43:05.4244395Z * What went wrong:
+2026-09-30T11:43:05.4274648Z Execution failed for task ':BelgeselX:compileDebugKotlin'.
+2026-09-30T11:43:05.4325814Z > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+2026-09-30T11:43:05.4334639Z    > Compilation error. See log for more details
+2026-09-30T11:43:05.4382994Z 
+2026-09-30T11:43:05.4394562Z * Try:
+2026-09-30T11:43:05.4424796Z > Run with --stacktrace option to get the stack trace.
+2026-09-30T11:43:05.4455162Z > Run with --info or --debug option to get more log output.
+2026-09-30T11:43:05.4456298Z > Run with --scan to get full insights.
+2026-09-30T11:43:05.4514577Z > Get more help at https://help.gradle.org.
+2026-09-30T11:43:05.4534590Z ==============================================================================
+2026-09-30T11:43:05.4544183Z 
+2026-09-30T11:43:05.4604488Z 2: Task failed with an exception.
+2026-09-30T11:43:05.4634357Z -----------
+2026-09-30T11:43:05.4634913Z * What went wrong:
+2026-09-30T11:43:05.4654713Z Execution failed for task ':AnimeciX:compileDebugKotlin'.
+2026-09-30T11:43:05.4675093Z > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+2026-09-30T11:43:05.4694526Z    > Compilation error. See log for more details
+2026-09-30T11:43:05.4724212Z 
+2026-09-30T11:43:05.4724365Z * Try:
+2026-09-30T11:43:05.4724807Z > Run with --stacktrace option to get the stack trace.
+2026-09-30T11:43:05.4725514Z > Run with --info or --debug option to get more log output.
+2026-09-30T11:43:05.4726141Z > Run with --scan to get full insights.
+2026-09-30T11:43:05.4726681Z > Get more help at https://help.gradle.org.
+2026-09-30T11:43:05.4727245Z ==============================================================================
+2026-09-30T11:43:05.4727657Z 
+2026-09-30T11:43:05.4727830Z 3: Task failed with an exception.
+2026-09-30T11:43:05.4728253Z -----------
+2026-09-30T11:43:05.4728581Z * What went wrong:
+2026-09-30T11:43:05.4729084Z Execution failed for task ':CizgiMax:compileDebugKotlin'.
+2026-09-30T11:43:05.4730413Z > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+2026-09-30T11:43:05.4731666Z    > Compilation error. See log for more details
+2026-09-30T11:43:05.4732061Z 
+2026-09-30T11:43:05.4732195Z * Try:
+2026-09-30T11:43:05.4732623Z > Run with --stacktrace option to get the stack trace.
+2026-09-30T11:43:05.4733295Z > Run with --info or --debug option to get more log output.
+2026-09-30T11:43:05.4734130Z > Run with --scan to get full insights.
+2026-09-30T11:43:05.4734692Z > Get more help at https://help.gradle.org.
+2026-09-30T11:43:05.4735263Z ==============================================================================
+2026-09-30T11:43:05.4735683Z 
+2026-09-30T11:43:05.4735852Z 4: Task failed with an exception.
+2026-09-30T11:43:05.4736311Z -----------
+2026-09-30T11:43:05.4736639Z * What went wrong:
+2026-09-30T11:43:05.4737130Z Execution failed for task ':CanliTV:compileDebugKotlin'.
+2026-09-30T11:43:05.4738410Z > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+2026-09-30T11:43:05.4739638Z    > Compilation error. See log for more details
+2026-09-30T11:43:05.4739999Z 
+2026-09-30T11:43:05.4740127Z * Try:
+2026-09-30T11:43:05.4740530Z > Run with --stacktrace option to get the stack trace.
+2026-09-30T11:43:05.4741184Z > Run with --info or --debug option to get more log output.
+2026-09-30T11:43:05.4741765Z > Run with --scan to get full insights.
+2026-09-30T11:43:05.4742284Z > Get more help at https://help.gradle.org.
+2026-09-30T11:43:05.4742850Z ==============================================================================
+2026-09-30T11:43:05.4743703Z 
+2026-09-30T11:43:05.4744138Z BUILD FAILED in 1m 49s
+2026-09-30T11:43:06.1102202Z ##[error]Process completed with exit code 1.
+2026-09-30T11:43:06.1307075Z Post job cleanup.
+2026-09-30T11:43:06.3544388Z (node:2698) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T11:43:06.3576366Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T11:43:06.4040246Z Post job cleanup.
+2026-09-30T11:43:06.5344514Z [command]/usr/bin/git version
+2026-09-30T11:43:06.5444795Z git version 2.55.0
+2026-09-30T11:43:06.5475696Z Temporarily overriding HOME='/home/runner/work/_temp/58cc9e45-d106-4341-a6a7-18915a096fb0' before making global git config changes
+2026-09-30T11:43:06.5493505Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:43:06.5512719Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/builds
+2026-09-30T11:43:06.5556088Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:43:06.5632049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:43:06.6116746Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:43:06.6159557Z http.https://github.com/.extraheader
+2026-09-30T11:43:06.6180781Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T11:43:06.6265623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:43:06.6604561Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:43:06.6632400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:43:06.7268000Z Post job cleanup.
+2026-09-30T11:43:06.8301155Z [command]/usr/bin/git version
+2026-09-30T11:43:06.8345455Z git version 2.55.0
+2026-09-30T11:43:06.8383535Z Temporarily overriding HOME='/home/runner/work/_temp/a45eca9b-e109-4743-bfff-aa5ea5f9cce6' before making global git config changes
+2026-09-30T11:43:06.8385350Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:43:06.8389600Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/src
+2026-09-30T11:43:06.8429523Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:43:06.8468297Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:43:06.8804194Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:43:06.8835333Z http.https://github.com/.extraheader
+2026-09-30T11:43:06.8849137Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T11:43:06.8899672Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:43:06.9191022Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:43:06.9229892Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:43:06.9719066Z Cleaning up orphan processes
+2026-09-30T11:43:07.0165102Z Terminate orphan process: pid (2600) (java)
+2026-09-30T11:43:07.0177097Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

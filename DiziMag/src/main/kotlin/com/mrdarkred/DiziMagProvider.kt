@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 package com.mrdarkred
 
 import com.lagradost.cloudstream3.*

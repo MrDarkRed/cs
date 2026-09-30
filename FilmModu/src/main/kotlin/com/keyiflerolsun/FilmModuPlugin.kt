@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 package com.keyiflerolsun
 
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin

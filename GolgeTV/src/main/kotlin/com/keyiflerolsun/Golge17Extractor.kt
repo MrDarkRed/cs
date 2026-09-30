@@ -1,3 +1,4 @@
+﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 package com.keyiflerolsun
 
 import android.util.Base64
