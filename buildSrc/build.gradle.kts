@@ -41,6 +41,8 @@ dependencies {
 
     implementation("com.google.guava:guava:33.4.0-jre")
     implementation("com.android.tools.build:gradle:8.7.3")
+    implementation("com.android.tools.build:builder:8.7.3")
+    implementation("com.android.tools:sdk-common:31.7.3")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
 
     implementation("org.ow2.asm:asm:9.7.1")
