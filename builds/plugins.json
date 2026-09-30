@@ -1,0 +1,99 @@
+﻿[
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziMag.cs3",
+    "status": 1,
+    "name": "DiziMag",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "DiziMag â€” TÃ¼rkÃ§e dizi izleme sitesi.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["TvSeries"],
+    "language": "tr",
+    "iconUrl": "https://ddizimag.com/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/CanliTV.cs3",
+    "status": 1,
+    "name": "CanliTV",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "TÃ¼rk canlÄ± TV kanallarÄ± â€” Ulusal, haber, spor ve daha fazlasÄ±.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["Live"],
+    "language": "tr",
+    "iconUrl": "https://tr.canlitv.team/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/FilmMakinesi.cs3",
+    "status": 1,
+    "name": "FilmMakinesi",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "TÃ¼rkÃ§e film izleme â€” Aksiyon, komedi, dram ve daha fazlasÄ±.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["Movie", "TvSeries"],
+    "language": "tr",
+    "iconUrl": "https://www.filmizlesene.com/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziPal.cs3",
+    "status": 1,
+    "name": "DiziPal",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "DiziPal â€” TÃ¼rkÃ§e dublaj ve altyazÄ±lÄ± yabancÄ± dizi izleme.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["TvSeries"],
+    "language": "tr",
+    "iconUrl": "https://dizipal700.com/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/HDFilmCehennemi.cs3",
+    "status": 1,
+    "name": "HDFilmCehennemi",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "HD Film Cehennemi â€” TÃ¼rkÃ§e HD film izleme sitesi.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["Movie"],
+    "language": "tr",
+    "iconUrl": "https://www.hdfilmcehennemi.nl/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/FullHDFilm.cs3",
+    "status": 1,
+    "name": "FullHDFilm",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "Full HD Film â€” TÃ¼rkÃ§e full HD film izleme sitesi.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["Movie"],
+    "language": "tr",
+    "iconUrl": "https://fullhdfilm.org/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziBox.cs3",
+    "status": 1,
+    "name": "DiziBox",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "DiziBox â€” YabancÄ± dizi izle, tÃ¼m sezonlar full HD.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["TvSeries"],
+    "language": "tr",
+    "iconUrl": "https://www.dizibox.pro/favicon.ico"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/SezonlukDizi.cs3",
+    "status": 1,
+    "name": "SezonlukDizi",
+    "version": 1,
+    "authors": ["MrDarkRed"],
+    "description": "SezonlukDizi â€” TÃ¼rkÃ§e yabancÄ± dizi izleme, sezon sezon.",
+    "repositoryUrl": "https://github.com/MrDarkRed/cs",
+    "tvTypes": ["TvSeries"],
+    "language": "tr",
+    "iconUrl": "https://www.sezonlukdizi.net/favicon.ico"
+  }
+]
+
