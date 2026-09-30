@@ -1,0 +1,324 @@
+﻿2026-09-30T11:28:37.7866460Z Current runner version: '2.337.0'
+2026-09-30T11:28:37.7883263Z ##[group]Runner Image Provisioner
+2026-09-30T11:28:37.7883934Z Hosted Compute Agent
+2026-09-30T11:28:37.7884376Z Version: 20260828.587
+2026-09-30T11:28:37.7884809Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-30T11:28:37.7885305Z Build Date: 2026-08-28T16:44:25Z
+2026-09-30T11:28:37.7886028Z Worker ID: {56271879-c565-448b-b624-05f2b6c84e3e}
+2026-09-30T11:28:37.7886531Z Azure Region: centralus
+2026-09-30T11:28:37.7886932Z ##[endgroup]
+2026-09-30T11:28:37.7887988Z ##[group]Operating System
+2026-09-30T11:28:37.7888428Z Ubuntu
+2026-09-30T11:28:37.7888784Z 24.04.5
+2026-09-30T11:28:37.7889137Z LTS
+2026-09-30T11:28:37.7889488Z ##[endgroup]
+2026-09-30T11:28:37.7889850Z ##[group]Runner Image
+2026-09-30T11:28:37.7890237Z Image: ubuntu-24.04
+2026-09-30T11:28:37.7890639Z Version: 20260920.314.1
+2026-09-30T11:28:37.7891506Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T11:28:37.7892562Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-30T11:28:37.7893190Z ##[endgroup]
+2026-09-30T11:28:37.7895297Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T11:28:37.7897675Z Actions: write
+2026-09-30T11:28:37.7898109Z ArtifactMetadata: write
+2026-09-30T11:28:37.7898564Z Attestations: write
+2026-09-30T11:28:37.7898957Z Checks: write
+2026-09-30T11:28:37.7899354Z CodeQuality: write
+2026-09-30T11:28:37.7899723Z Contents: write
+2026-09-30T11:28:37.7900119Z CopilotRequests: write
+2026-09-30T11:28:37.7900503Z Deployments: write
+2026-09-30T11:28:37.7900874Z Discussions: write
+2026-09-30T11:28:37.7901295Z Drives: write
+2026-09-30T11:28:37.7901646Z Issues: write
+2026-09-30T11:28:37.7902026Z Metadata: read
+2026-09-30T11:28:37.7902447Z Models: read
+2026-09-30T11:28:37.7902801Z Packages: write
+2026-09-30T11:28:37.7903186Z Pages: write
+2026-09-30T11:28:37.7903554Z PullRequests: write
+2026-09-30T11:28:37.7903974Z RepositoryProjects: write
+2026-09-30T11:28:37.7904414Z SecurityEvents: write
+2026-09-30T11:28:37.7904790Z Statuses: write
+2026-09-30T11:28:37.7905190Z VulnerabilityAlerts: read
+2026-09-30T11:28:37.7905729Z ##[endgroup]
+2026-09-30T11:28:37.7907332Z Secret source: Actions
+2026-09-30T11:28:37.7907952Z Cache mode: write
+2026-09-30T11:28:37.7908454Z Prepare workflow directory
+2026-09-30T11:28:37.8162814Z Prepare all required actions
+2026-09-30T11:28:37.8204594Z Getting action download info
+2026-09-30T11:28:38.0516705Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T11:28:38.4531602Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-09-30T11:28:39.1640697Z Complete job name: build
+2026-09-30T11:28:39.2214106Z ##[group]Run actions/checkout@v4
+2026-09-30T11:28:39.2214872Z with:
+2026-09-30T11:28:39.2215255Z   path: src
+2026-09-30T11:28:39.2215938Z   repository: MrDarkRed/cs
+2026-09-30T11:28:39.2219185Z   token: ***
+2026-09-30T11:28:39.2219581Z   ssh-strict: true
+2026-09-30T11:28:39.2220005Z   ssh-user: git
+2026-09-30T11:28:39.2220401Z   persist-credentials: true
+2026-09-30T11:28:39.2220834Z   clean: true
+2026-09-30T11:28:39.2221256Z   sparse-checkout-cone-mode: true
+2026-09-30T11:28:39.2221707Z   fetch-depth: 1
+2026-09-30T11:28:39.2222110Z   fetch-tags: false
+2026-09-30T11:28:39.2222534Z   show-progress: true
+2026-09-30T11:28:39.2222945Z   lfs: false
+2026-09-30T11:28:39.2223348Z   submodules: false
+2026-09-30T11:28:39.2223752Z   set-safe-directory: true
+2026-09-30T11:28:39.2224233Z   allow-unsafe-pr-checkout: false
+2026-09-30T11:28:39.2224883Z ##[endgroup]
+2026-09-30T11:28:39.2981791Z Syncing repository: MrDarkRed/cs
+2026-09-30T11:28:39.2983290Z ##[group]Getting Git version info
+2026-09-30T11:28:39.2984267Z Working directory is '/home/runner/work/cs/cs/src'
+2026-09-30T11:28:39.2985418Z [command]/usr/bin/git version
+2026-09-30T11:28:39.3034395Z git version 2.55.0
+2026-09-30T11:28:39.3055551Z ##[endgroup]
+2026-09-30T11:28:39.3068484Z Temporarily overriding HOME='/home/runner/work/_temp/6f097653-452b-4def-b85a-59cf20a67e61' before making global git config changes
+2026-09-30T11:28:39.3069786Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:28:39.3073346Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/src
+2026-09-30T11:28:39.3113695Z ##[group]Initializing the repository
+2026-09-30T11:28:39.3119632Z [command]/usr/bin/git init /home/runner/work/cs/cs/src
+2026-09-30T11:28:39.3204484Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T11:28:39.3206276Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T11:28:39.3207676Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T11:28:39.3208674Z hint: call:
+2026-09-30T11:28:39.3209291Z hint:
+2026-09-30T11:28:39.3211159Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T11:28:39.3211995Z hint:
+2026-09-30T11:28:39.3213274Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T11:28:39.3214924Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T11:28:39.3216135Z hint:
+2026-09-30T11:28:39.3216826Z hint: 	git branch -m <name>
+2026-09-30T11:28:39.3217507Z hint:
+2026-09-30T11:28:39.3218336Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T11:28:39.3219815Z Initialized empty Git repository in /home/runner/work/cs/cs/src/.git/
+2026-09-30T11:28:39.3222575Z [command]/usr/bin/git remote add origin https://github.com/MrDarkRed/cs
+2026-09-30T11:28:39.3256074Z ##[endgroup]
+2026-09-30T11:28:39.3257089Z ##[group]Disabling automatic garbage collection
+2026-09-30T11:28:39.3258919Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T11:28:39.3281757Z ##[endgroup]
+2026-09-30T11:28:39.3282781Z ##[group]Setting up auth
+2026-09-30T11:28:39.3287040Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:28:39.3309100Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:28:39.4433982Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:28:39.4457735Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:28:39.4605277Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:28:39.4630495Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:28:39.4774462Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T11:28:39.4804836Z ##[endgroup]
+2026-09-30T11:28:39.4805885Z ##[group]Fetching the repository
+2026-09-30T11:28:39.4812351Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2f82e1bec96a99303d624ee03e27241724b75c5d:refs/remotes/origin/master
+2026-09-30T11:28:40.2566913Z From https://github.com/MrDarkRed/cs
+2026-09-30T11:28:40.2568338Z  * [new ref]         2f82e1bec96a99303d624ee03e27241724b75c5d -> origin/master
+2026-09-30T11:28:40.2571700Z ##[endgroup]
+2026-09-30T11:28:40.2573085Z ##[group]Determining the checkout info
+2026-09-30T11:28:40.2574553Z ##[endgroup]
+2026-09-30T11:28:40.2580821Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T11:28:40.2883452Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T11:28:40.2907256Z ##[group]Checking out the ref
+2026-09-30T11:28:40.2911270Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-09-30T11:28:40.4552477Z Reset branch 'master'
+2026-09-30T11:28:40.4555170Z branch 'master' set up to track 'origin/master'.
+2026-09-30T11:28:40.4561774Z ##[endgroup]
+2026-09-30T11:28:40.4603489Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T11:28:40.4621704Z 2f82e1bec96a99303d624ee03e27241724b75c5d
+2026-09-30T11:28:40.4916929Z ##[group]Run actions/checkout@v4
+2026-09-30T11:28:40.4917774Z with:
+2026-09-30T11:28:40.4918410Z   ref: builds
+2026-09-30T11:28:40.4919069Z   path: builds
+2026-09-30T11:28:40.4919744Z   repository: MrDarkRed/cs
+2026-09-30T11:28:40.4926362Z   token: ***
+2026-09-30T11:28:40.4927090Z   ssh-strict: true
+2026-09-30T11:28:40.4927764Z   ssh-user: git
+2026-09-30T11:28:40.4928451Z   persist-credentials: true
+2026-09-30T11:28:40.4929194Z   clean: true
+2026-09-30T11:28:40.4929867Z   sparse-checkout-cone-mode: true
+2026-09-30T11:28:40.4930720Z   fetch-depth: 1
+2026-09-30T11:28:40.4931391Z   fetch-tags: false
+2026-09-30T11:28:40.4932084Z   show-progress: true
+2026-09-30T11:28:40.4932778Z   lfs: false
+2026-09-30T11:28:40.4933422Z   submodules: false
+2026-09-30T11:28:40.4934197Z   set-safe-directory: true
+2026-09-30T11:28:40.4934980Z   allow-unsafe-pr-checkout: false
+2026-09-30T11:28:40.4935895Z ##[endgroup]
+2026-09-30T11:28:40.5539338Z Syncing repository: MrDarkRed/cs
+2026-09-30T11:28:40.5549085Z ##[group]Getting Git version info
+2026-09-30T11:28:40.5553125Z Working directory is '/home/runner/work/cs/cs/builds'
+2026-09-30T11:28:40.5571555Z [command]/usr/bin/git version
+2026-09-30T11:28:40.5597261Z git version 2.55.0
+2026-09-30T11:28:40.5612299Z ##[endgroup]
+2026-09-30T11:28:40.5619870Z Temporarily overriding HOME='/home/runner/work/_temp/ef4f8ffe-0c36-4367-af3f-b5b997cb477e' before making global git config changes
+2026-09-30T11:28:40.5623453Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:28:40.5627361Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/builds
+2026-09-30T11:28:40.5645188Z ##[group]Initializing the repository
+2026-09-30T11:28:40.5648226Z [command]/usr/bin/git init /home/runner/work/cs/cs/builds
+2026-09-30T11:28:40.5677125Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T11:28:40.5679385Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T11:28:40.5681552Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T11:28:40.5683731Z hint: call:
+2026-09-30T11:28:40.5684693Z hint:
+2026-09-30T11:28:40.5686601Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T11:28:40.5688177Z hint:
+2026-09-30T11:28:40.5689580Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T11:28:40.5691600Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T11:28:40.5693288Z hint:
+2026-09-30T11:28:40.5694241Z hint: 	git branch -m <name>
+2026-09-30T11:28:40.5695299Z hint:
+2026-09-30T11:28:40.5697064Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T11:28:40.5699494Z Initialized empty Git repository in /home/runner/work/cs/cs/builds/.git/
+2026-09-30T11:28:40.5703430Z [command]/usr/bin/git remote add origin https://github.com/MrDarkRed/cs
+2026-09-30T11:28:40.5708584Z ##[endgroup]
+2026-09-30T11:28:40.5710522Z ##[group]Disabling automatic garbage collection
+2026-09-30T11:28:40.5712197Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T11:28:40.7052375Z ##[endgroup]
+2026-09-30T11:28:40.7054073Z ##[group]Setting up auth
+2026-09-30T11:28:40.7056686Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:28:40.7083492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:28:40.7234480Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:28:40.7261281Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:28:40.7403752Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:28:40.7430762Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:28:40.7579602Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T11:28:40.7610249Z ##[endgroup]
+2026-09-30T11:28:40.7611801Z ##[group]Fetching the repository
+2026-09-30T11:28:40.7619607Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/builds*:refs/remotes/origin/builds* +refs/tags/builds*:refs/tags/builds*
+2026-09-30T11:28:41.2266147Z From https://github.com/MrDarkRed/cs
+2026-09-30T11:28:41.2266708Z  * [new branch]      builds     -> origin/builds
+2026-09-30T11:28:41.2269626Z ##[endgroup]
+2026-09-30T11:28:41.2270182Z ##[group]Determining the checkout info
+2026-09-30T11:28:41.2275975Z [command]/usr/bin/git branch --list --remote origin/builds
+2026-09-30T11:28:41.2295409Z   origin/builds
+2026-09-30T11:28:41.2298010Z ##[endgroup]
+2026-09-30T11:28:41.2303207Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T11:28:41.2336386Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T11:28:41.2366592Z ##[group]Checking out the ref
+2026-09-30T11:28:41.2369645Z [command]/usr/bin/git checkout --progress --force -B builds refs/remotes/origin/builds
+2026-09-30T11:28:41.2398517Z Switched to a new branch 'builds'
+2026-09-30T11:28:41.2399139Z branch 'builds' set up to track 'origin/builds'.
+2026-09-30T11:28:41.2402357Z ##[endgroup]
+2026-09-30T11:28:41.2426382Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T11:28:41.2445324Z a89531e6f597283312aa5f5c9cfdc7752fb2cd1b
+2026-09-30T11:28:41.2551663Z ##[group]Run rm -f $GITHUB_WORKSPACE/builds/*.cs3 || true
+2026-09-30T11:28:41.2552196Z [36;1mrm -f $GITHUB_WORKSPACE/builds/*.cs3 || true[0m
+2026-09-30T11:28:41.2781300Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:28:41.2781740Z ##[endgroup]
+2026-09-30T11:28:41.2962835Z ##[group]Run actions/setup-java@v4
+2026-09-30T11:28:41.2963181Z with:
+2026-09-30T11:28:41.2963496Z   distribution: temurin
+2026-09-30T11:28:41.2963798Z   java-version: 17
+2026-09-30T11:28:41.2964124Z   java-package: jdk
+2026-09-30T11:28:41.2964465Z   check-latest: false
+2026-09-30T11:28:41.2964769Z   server-id: github
+2026-09-30T11:28:41.2965089Z   server-username: GITHUB_ACTOR
+2026-09-30T11:28:41.2965419Z   server-password: GITHUB_TOKEN
+2026-09-30T11:28:41.2965954Z   overwrite-settings: true
+2026-09-30T11:28:41.2966331Z   job-status: success
+2026-09-30T11:28:41.2968389Z   token: ***
+2026-09-30T11:28:41.2968695Z ##[endgroup]
+2026-09-30T11:28:41.4172325Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-09-30T11:28:41.4178504Z ##[group]Installed distributions
+2026-09-30T11:28:41.4197812Z Resolved Java 17.0.20+1 from tool-cache
+2026-09-30T11:28:41.4198258Z Setting Java 17.0.20+1 as the default
+2026-09-30T11:28:41.4205198Z (node:2128) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T11:28:41.4206489Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T11:28:41.4207311Z Creating toolchains.xml for JDK version 17 from temurin
+2026-09-30T11:28:41.4255020Z Writing to /home/runner/.m2/toolchains.xml
+2026-09-30T11:28:41.4256018Z 
+2026-09-30T11:28:41.4259699Z Java configuration:
+2026-09-30T11:28:41.4260088Z   Distribution: temurin
+2026-09-30T11:28:41.4260642Z   Version: 17.0.20+1
+2026-09-30T11:28:41.4261816Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:28:41.4262276Z 
+2026-09-30T11:28:41.4262703Z ##[endgroup]
+2026-09-30T11:28:41.4277737Z Creating settings.xml with server-id: github
+2026-09-30T11:28:41.4306102Z Writing to /home/runner/.m2/settings.xml
+2026-09-30T11:28:41.4430838Z ##[group]Run echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+2026-09-30T11:28:41.4431606Z [36;1mecho "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV[0m
+2026-09-30T11:28:41.4432243Z [36;1mecho "ANDROID_SDK_ROOT=/usr/local/lib/android/sdk" >> $GITHUB_ENV[0m
+2026-09-30T11:28:41.4483726Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:28:41.4484657Z env:
+2026-09-30T11:28:41.4485872Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:28:41.4487305Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:28:41.4488735Z ##[endgroup]
+2026-09-30T11:28:41.4621192Z ##[group]Run cd $GITHUB_WORKSPACE/src
+2026-09-30T11:28:41.4621747Z [36;1mcd $GITHUB_WORKSPACE/src[0m
+2026-09-30T11:28:41.4622205Z [36;1mchmod +x gradlew[0m
+2026-09-30T11:28:41.4622696Z [36;1m./gradlew make makePluginsJson --no-daemon[0m
+2026-09-30T11:28:41.4623370Z [36;1mcp **/build/*.cs3 $GITHUB_WORKSPACE/builds 2>/dev/null || true[0m
+2026-09-30T11:28:41.4624287Z [36;1mcp build/plugins.json $GITHUB_WORKSPACE/builds 2>/dev/null || cp plugins.json $GITHUB_WORKSPACE/builds 2>/dev/null || true[0m
+2026-09-30T11:28:41.4664284Z shell: /usr/bin/bash -e {0}
+2026-09-30T11:28:41.4664686Z env:
+2026-09-30T11:28:41.4665090Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:28:41.4665818Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-30T11:28:41.4666287Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-30T11:28:41.4666667Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-30T11:28:41.4667127Z ##[endgroup]
+2026-09-30T11:28:42.0645112Z Downloading https://services.gradle.org/distributions/gradle-7.4-bin.zip
+2026-09-30T11:28:43.9122157Z ..............................................................................................................
+2026-09-30T11:28:43.9127910Z Unzipping /home/runner/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4-bin.zip to /home/runner/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt
+2026-09-30T11:28:44.4721220Z Set executable permissions for: /home/runner/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4/bin/gradle
+2026-09-30T11:28:44.8191032Z 
+2026-09-30T11:28:44.8191844Z Welcome to Gradle 7.4!
+2026-09-30T11:28:44.8192093Z 
+2026-09-30T11:28:44.8196214Z Here are the highlights of this release:
+2026-09-30T11:28:44.8196787Z  - Aggregated test and JaCoCo reports
+2026-09-30T11:28:44.8197383Z  - Marking additional test source directories as tests in IntelliJ
+2026-09-30T11:28:44.8198010Z  - Support for Adoptium JDKs in Java toolchains
+2026-09-30T11:28:44.8198356Z 
+2026-09-30T11:28:44.8198683Z For more details see https://docs.gradle.org/7.4/release-notes.html
+2026-09-30T11:28:44.8199048Z 
+2026-09-30T11:28:44.9195490Z To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.4/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+2026-09-30T11:28:45.9194264Z Daemon will be stopped at the end of the build 
+2026-09-30T11:29:10.6192365Z 
+2026-09-30T11:29:10.6193053Z FAILURE: Build failed with an exception.
+2026-09-30T11:29:10.6193542Z 
+2026-09-30T11:29:10.6198675Z * What went wrong:
+2026-09-30T11:29:10.6199203Z A problem occurred configuring root project 'CloudstreamPlugins'.
+2026-09-30T11:29:10.6199812Z > Could not resolve all files for configuration ':classpath'.
+2026-09-30T11:29:10.6200373Z    > Could not resolve com.github.recloudstream:gradle:master-SNAPSHOT.
+2026-09-30T11:29:10.6200809Z      Required by:
+2026-09-30T11:29:10.6201128Z          project :
+2026-09-30T11:29:10.6201646Z       > Could not resolve com.github.recloudstream:gradle:master-SNAPSHOT.
+2026-09-30T11:29:10.6205933Z          > inconsistent module metadata found. Descriptor: com.github.recloudstream:gradle:master-master-SNAPSHOT Errors: bad version: expected='master-SNAPSHOT' found='master-master-SNAPSHOT'
+2026-09-30T11:29:10.6207032Z 
+2026-09-30T11:29:10.6207175Z * Try:
+2026-09-30T11:29:10.6207659Z > Run with --stacktrace option to get the stack trace.
+2026-09-30T11:29:10.6208133Z > Run with --info or --debug option to get more log output.
+2026-09-30T11:29:10.6208536Z > Run with --scan to get full insights.
+2026-09-30T11:29:10.6208769Z 
+2026-09-30T11:29:10.6208953Z * Get more help at https://help.gradle.org
+2026-09-30T11:29:10.6209199Z 
+2026-09-30T11:29:10.6209354Z BUILD FAILED in 28s
+2026-09-30T11:29:11.0154146Z ##[error]Process completed with exit code 1.
+2026-09-30T11:29:11.0248464Z Post job cleanup.
+2026-09-30T11:29:11.1294984Z (node:2299) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T11:29:11.1295872Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T11:29:11.1420078Z Post job cleanup.
+2026-09-30T11:29:11.2032275Z [command]/usr/bin/git version
+2026-09-30T11:29:11.2059914Z git version 2.55.0
+2026-09-30T11:29:11.2083136Z Temporarily overriding HOME='/home/runner/work/_temp/e9fca200-91d6-48dc-9c2d-54e353a60dd6' before making global git config changes
+2026-09-30T11:29:11.2084093Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:29:11.2086561Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/builds
+2026-09-30T11:29:11.2112539Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:29:11.2135523Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:29:11.2355493Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:29:11.3209566Z http.https://github.com/.extraheader
+2026-09-30T11:29:11.3220033Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T11:29:11.3250096Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:29:11.3406499Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:29:11.3431387Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:29:11.3704119Z Post job cleanup.
+2026-09-30T11:29:11.4346575Z [command]/usr/bin/git version
+2026-09-30T11:29:11.4376452Z git version 2.55.0
+2026-09-30T11:29:11.4398747Z Temporarily overriding HOME='/home/runner/work/_temp/facc6254-be20-4993-94bc-bd936928518c' before making global git config changes
+2026-09-30T11:29:11.4406340Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T11:29:11.4412313Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs/cs/src
+2026-09-30T11:29:11.4433989Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T11:29:11.4459164Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T11:29:11.4623221Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T11:29:11.4638154Z http.https://github.com/.extraheader
+2026-09-30T11:29:11.4645179Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T11:29:11.4668999Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T11:29:11.4829393Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T11:29:11.4851748Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T11:29:11.5107045Z Cleaning up orphan processes
+2026-09-30T11:29:11.5282054Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
