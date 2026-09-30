@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 package com.mrdarkred
 
 import com.lagradost.cloudstream3.*
@@ -18,7 +18,7 @@ class DiziMagProvider : MainAPI() {
     // ================================================================
 
     override var name           = "DiziMag"
-    override val lang           = "tr"
+    override var lang           = "tr"
     override val hasMainPage    = true
     override val hasQuickSearch = true
     override val supportedTypes = setOf(TvType.TvSeries)
@@ -45,7 +45,8 @@ class DiziMagProvider : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("$mainUrl/?s=${query.encodeUrl()}").document
+        val encodedQuery = java.net.URLEncoder.encode(query, "utf-8")
+        val document = app.get("$mainUrl/?s=$encodedQuery").document
         return document.select(
             "div.dizi-item, article.dizi, div.series-card, div.item, div.card"
         ).mapNotNull { it.toSearchResponse() }
