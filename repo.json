@@ -1,0 +1,8 @@
+{
+  "name": "MrDarkRed Turkce Repo",
+  "description": "Kisisel Turkce CloudStream Eklenti Deposu",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/MrDarkRed/cs/builds/plugins.json"
+  ]
+}
