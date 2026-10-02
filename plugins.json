@@ -226,11 +226,11 @@
         "name": "DiziYou"
     },
     {
-        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.film&sz=%size%",
-        "fileHash": "sha256-c4bea0c38eb2b19c118709afde75eabe740f0c871c58ef947ec0c4044285bb77",
+        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.co&sz=%size%",
+        "fileHash": "sha256-82b55f285542e4a53a3011e54a6d94483209ed089343c100ceb32f3684c0a297",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 13855,
+        "fileSize": 15166,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -240,7 +240,7 @@
         "tvTypes": [
             "Movie"
         ],
-        "version": 6,
+        "version": 7,
         "internalName": "FilmMakinesi",
         "description": "Film Makinesi, en yeni ve en g\u00fcncel filmleri sitemizde full HD kalite fark\u0131 ile izleyebilirsiniz. HD film izle denildi\u011finde akla gelen en kaliteli film izleme sitesi.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/FilmMakinesi.cs3",
