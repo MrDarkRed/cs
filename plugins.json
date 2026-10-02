@@ -125,10 +125,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%",
-        "fileHash": "sha256-a55dc03dbc290913f299212ed3acb1a29d29a7370c3e61cca0c5b04bb9b02689",
+        "fileHash": "sha256-0d9fe92ea0b785809d3c323e9faa4c030a8aff730bbdaf49bd5cf5e2b0f60fd2",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 23924,
+        "fileSize": 23925,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -137,7 +137,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 14,
+        "version": 15,
         "internalName": "Dizilla",
         "description": "Dizilla t\u00fcm yabanc\u0131 dizileri \u00fccretsiz olarak T\u00fcrk\u00e7e Dublaj ve altyaz\u0131l\u0131 se\u00e7enekleri ile 1080P kalite izleyebilece\u011finiz yeni nesil yabanc\u0131 dizi izleme siteniz.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/Dizilla.cs3",
@@ -165,7 +165,7 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizimom.tv&sz=%size%",
-        "fileHash": "sha256-791e849a04749d7b1ce55b89d6d5a1029c40d11c9678bd45fbdb47bc189a86c7",
+        "fileHash": "sha256-4766a1f314a64055f859e31fcc93710a831d8ef5037d567811eb2d94810482f3",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
         "fileSize": 28339,
@@ -177,7 +177,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 10,
+        "version": 11,
         "internalName": "DiziMom",
         "description": "Binlerce yerli yabanc\u0131 dizi ar\u015fivi, t\u00fcm sezonlar, kesintisiz b\u00f6l\u00fcmler. Sadece dizi izle, Dizimom heryerde seninle!",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziMom.cs3",
@@ -288,11 +288,11 @@
         "name": "FullHDFilm"
     },
     {
-        "iconUrl": "https://www.google.com/s2/favicons?domain=www.fullhdfilmizlesene.de&sz=%size%",
-        "fileHash": "sha256-9a9d71143c07093eda21ed5584b192358cdf86de5737138fad90fcd15dba5254",
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.fullhdfilmizlesene.pw&sz=%size%",
+        "fileHash": "sha256-7d1f7f0b12bd630a1fa8c1201aa82bda95577e14e9a65d864251307ace9c5d1f",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 28139,
+        "fileSize": 28257,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -301,7 +301,7 @@
         "tvTypes": [
             "Movie"
         ],
-        "version": 4,
+        "version": 5,
         "internalName": "FullHDFilmizlesene",
         "description": "Sinema zevkini evinize kadar getirdik. T\u00fcrkiye'nin lider Film sitesinde, en yeni filmleri Full HD izleyin.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/FullHDFilmizlesene.cs3",
@@ -351,10 +351,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.com&sz=%size%",
-        "fileHash": "sha256-a2f464cce80d4cb58ed2298dd2db38628af0c5dbccca4451dff0eefb7e457bed",
+        "fileHash": "sha256-61f1234d8795b652f454610b0f3f5401dc83ff4850f0bf283b4860ba579b1d5b",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20102,
+        "fileSize": 20219,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -365,7 +365,7 @@
             "Movie",
             "TvSeries"
         ],
-        "version": 18,
+        "version": 19,
         "internalName": "HDFilmCehennemi",
         "description": "T\u00fcrkiye'nin en h\u0131zl\u0131 hd film izleme sitesi",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/HDFilmCehennemi.cs3",
@@ -625,11 +625,11 @@
         "name": "SetFilmIzle"
     },
     {
-        "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi6.com&sz=%size%",
-        "fileHash": "sha256-966861e1fbc573d049a125fab0bf9e6a3fbe4b57dd76f33f32496c6f40d947f0",
+        "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi.cc&sz=%size%",
+        "fileHash": "sha256-73129fd1e694067f4837b8fdbc2d936064f497471addfaf2b916b8152c2134a0",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 18851,
+        "fileSize": 18847,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -639,7 +639,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 2,
+        "version": 3,
         "internalName": "SezonlukDizi",
         "description": "G\u00fcncel ve eski dizileri en iyi g\u00f6r\u00fcnt\u00fc kalitesiyle bulabilece\u011finiz yabanc\u0131 dizi izleme siteniz.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/SezonlukDizi.cs3",
