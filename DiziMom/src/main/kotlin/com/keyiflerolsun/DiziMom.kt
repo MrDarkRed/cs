@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 package com.keyiflerolsun
@@ -10,7 +10,7 @@ import com.lagradost.cloudstream3.utils.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 class DiziMom : MainAPI() {
-    override var mainUrl              = "https://www.dizimom.plus"
+    override var mainUrl              = "https://www.dizimom.wiki"
     override var name                 = "DiziMom"
     override val hasMainPage          = true
     override var lang                 = "tr"

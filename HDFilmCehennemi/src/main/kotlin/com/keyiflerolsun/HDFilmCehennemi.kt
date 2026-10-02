@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! https://github.com/hexated/cloudstream-extensions-hexated/blob/master/Hdfilmcehennemi/src/main/kotlin/com/hexated/Hdfilmcehennemi.kt
 
 package com.keyiflerolsun
@@ -19,6 +19,9 @@ class HDFilmCehennemi : MainAPI() {
     override var lang                 = "tr"
     override val hasQuickSearch       = true
     override val supportedTypes       = setOf(TvType.Movie, TvType.TvSeries)
+
+    // ! CloudFlare bypass
+    override var sequentialMainPage = true
 
     override val mainPage = mainPageOf(
         mainUrl to "Yeni Eklenen Filmler",

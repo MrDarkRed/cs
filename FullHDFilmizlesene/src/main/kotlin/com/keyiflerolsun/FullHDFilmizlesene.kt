@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 package com.keyiflerolsun
@@ -17,12 +17,15 @@ import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
 
 class FullHDFilmizlesene : MainAPI() {
-    override var mainUrl              = "https://www.fullhdfilmizlesene.de"
+    override var mainUrl              = "https://www.fullhdfilmizlesene.pw"
     override var name                 = "FullHDFilmizlesene"
     override val hasMainPage          = true
     override var lang                 = "tr"
     override val hasQuickSearch       = false
     override val supportedTypes       = setOf(TvType.Movie)
+
+    // ! CloudFlare bypass
+    override var sequentialMainPage = true
 
     override val mainPage = mainPageOf(
         "${mainUrl}/en-cok-izlenen-filmler-izle-hd/"            to "En Çok izlenen Filmler",

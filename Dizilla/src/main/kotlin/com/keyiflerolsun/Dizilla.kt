@@ -1,4 +1,4 @@
-﻿@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
+@file:Suppress("DEPRECATION_ERROR", "DEPRECATION")
 // ! Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 package com.keyiflerolsun
@@ -10,7 +10,7 @@ import com.lagradost.cloudstream3.utils.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 class Dizilla : MainAPI() {
-    override var mainUrl              = "https://dizilla.nl"
+    override var mainUrl              = "https://dizilla.now"
     override var name                 = "Dizilla"
     override val hasMainPage          = true
     override var lang                 = "tr"
