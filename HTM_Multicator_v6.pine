@@ -1,0 +1,651 @@
+//@version=6
+indicator("HTM-Multicator Pro [v6]", shorttitle="HTM-Multi", overlay=true, max_lines_count=500, max_boxes_count=500, max_labels_count=500)
+
+// ==============================================================================
+// 1. GENEL FİLTRE MANTIĞI & AYARLAR (GÖRSEL 4 VE ŞAMPİYON MOTORU)
+// ==============================================================================
+var string G0 = "⚙️ 1. GENEL FİLTRE MANTIĞI & AYARLAR"
+filter_logic_mode  = input.string("Ayrı Ayrı (OR)", "Filtreleme Mantığı", 
+                     options=["Ayrı Ayrı (OR)", "Aynı Anda (AND)", "⭐ Şampiyon Taraması (Puanlama)"], group=G0,
+                     tooltip="🔒 VAZGEÇİLMEZ: Hepsi şarttır. 🎯 KESİN OLSUN: En az biri şart + yanında ek sinyal gerekir. 🟩 OLURSA İYİ OLUR: Şart değil, puana/alarma eklenir.")
+min_champ_score    = input.int(55, "Minimum Şampiyon / Teknik Puan Eşiği", minval=0, maxval=100, group=G0)
+cautious_alarm     = input.bool(true, "Temkinli Alarm Modu (Bar Kapanış Teyitli)", group=G0)
+alert_only_new     = input.bool(true, "Bekçi Hafızası: Sadece 'YENİ' Girenleri Bildir (🆕)", group=G0)
+
+// Seçenek şablonu
+var string OP_OFF   = "❌ KAPALI"
+var string OP_VAZ   = "🔒 VAZGEÇİLMEZ"
+var string OP_KES   = "🎯 KESİN OLSUN"
+var string OP_OLU   = "🟩 OLURSA İYİ OLUR"
+
+// ==============================================================================
+// 2. FİYAT AKSİYONU (PA) & KIRILIMLAR
+// ==============================================================================
+var string G1 = "🔍 2. FİYAT AKSİYONU (PA) & KIRILIMLAR"
+f_duk              = input.string("🎯 KESİN OLSUN", "Düşeni Kıran (DÜK)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+f_breakout         = input.string("🎯 KESİN OLSUN", "Breakout (Yatay Direnç + Hacim)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+f_msb              = input.string("🎯 KESİN OLSUN", "Market Kırılımı (MSB / CHoCH)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+f_bear_trap        = input.string("❌ KAPALI", "Ayı Tuzağı & GAP Sıçraması", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+f_ob_fvg           = input.string("🟩 OLURSA İYİ OLUR", "Order Block & FVG Testi", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+f_strong_candle    = input.string("🟩 OLURSA İYİ OLUR", "Güçlü Mum Formasyonu", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G1)
+draw_ob_boxes      = input.bool(true, "Grafikte Order Block Kutularını Çiz", group=G1)
+draw_fvg_boxes     = input.bool(true, "Grafikte FVG Boşluk Kutularını Çiz", group=G1)
+
+// ==============================================================================
+// 3. HAREKETLİ ORTALAMALAR (MA) & SIKIŞMA (GÖRSEL 1 VE BİST TARAMA)
+// ==============================================================================
+var string G2 = "📈 3. HAREKETLİ ORTALAMA (MA) & SIKIŞMA"
+f_ma_cross         = input.string("🟩 OLURSA İYİ OLUR", "34 SMA - 55 SMA - 89 WMA Kesişim", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G2)
+f_ma_above         = input.string("🟩 OLURSA İYİ OLUR", "Fiyat 144 EMA - 200 EMA - 233 EMA Üstünde", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G2)
+f_ma_retest        = input.string("❌ KAPALI", "34 VAR - 89 SMA - 144 WMA Retest", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G2)
+f_eff_ma           = input.string("🟩 OLURSA İYİ OLUR", "En Efektif Ortalama (50 SMA) Kesişimi", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G2)
+f_ma_squeeze       = input.string("🟩 OLURSA İYİ OLUR", "Ortalamalar Yakın (13-21-34-55 Sıkışma)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G2)
+show_ma_plots      = input.bool(true, "Grafikte 21, 55 ve 200 EMA'ları Çiz", group=G2)
+
+// ==============================================================================
+// 4. OSİLATÖRLER & SMART MONEY (SMC)
+// ==============================================================================
+var string G3 = "🧠 4. OSİLATÖRLER & SMART MONEY (SMC)"
+f_rsi_dip          = input.string("🎯 KESİN OLSUN", "RSI Dipten Dönüş Sistemi (5 Onaylı)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+f_rsi_zone         = input.string("🟩 OLURSA İYİ OLUR", "RSI 40 Üstünde & Yükseliş", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+f_smc_inflow       = input.string("🟩 OLURSA İYİ OLUR", "Akıllı Para Girişi (CMF + MFI + OBV 3'lü Onay)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+f_wavetrend        = input.string("🟩 OLURSA İYİ OLUR", "Wave Trend AL Sinyali", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+wt_zone            = input.string("Her ikisi", "Wave Trend Bölgesi", options=["Her ikisi", "-53 Seviye Altı", "-53 Seviye Üstü"], group=G3)
+f_macd             = input.string("🟩 OLURSA İYİ OLUR", "MACD / MACDAS AL Sinyali", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+macd_zone          = input.string("Her ikisi", "MACD Bölgesi", options=["Her ikisi", "Sıfır Seviye Altı", "Sıfır Seviye Üstü"], group=G3)
+f_fisher           = input.string("🟩 OLURSA İYİ OLUR", "Fisher Transform AL Sinyali", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+f_divergence       = input.string("🟩 OLURSA İYİ OLUR", "Pozitif Uyumsuzluk (RSI)", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G3)
+
+// ==============================================================================
+// 5. KOMPOZİT TARAMALAR (BİREBİR GÖRSEL 2 MENÜSÜ)
+// ==============================================================================
+var string G4 = "🧬 5. KOMPOZİT TARAMALAR (XU100 BAZLI)"
+xu100_ticker       = input.symbol("BIST:XU100", "Endeks Sembolü", group=G4)
+f_comp_duk         = input.string("❌ KAPALI", "Kompozit Düşeni Kıran", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+f_comp_breakout    = input.string("❌ KAPALI", "Kompozit Breakout", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+f_comp_msb         = input.string("❌ KAPALI", "Kompozit Market Kırılımı", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+f_comp_macd        = input.string("❌ KAPALI", "Kompozit Macd Al Sinyali", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+comp_macd_zone     = input.string("Her ikisi", "Kompozit Macd Sinyal Bölgesi ( Sıfır Seviye Üstü / Altı )", options=["Her ikisi", "Sıfır Üstü", "Sıfır Altı"], group=G4)
+f_comp_wt          = input.string("❌ KAPALI", "Kompozit Wave Trend", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+comp_wt_zone       = input.string("Her ikisi", "Kompozit Wave Trend Sinyal Bölgesi ( -53 Seviye Üstü / Altı )", options=["Her ikisi", "-53 Üstü", "-53 Altı"], group=G4)
+f_comp_alpha       = input.string("❌ KAPALI", "Kompozit Alpha Trend", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+f_comp_fisher      = input.string("❌ KAPALI", "Kompozit Fisher Transform", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+f_comp_td          = input.string("❌ KAPALI", "Kompozit TD Sequential", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G4)
+
+// ==============================================================================
+// 6. USD BAZLI TARAMALAR (BİREBİR GÖRSEL 3 MENÜSÜ)
+// ==============================================================================
+var string G5 = "💵 6. USD BAZLI TARAMALAR (USDTRY BAZLI)"
+usd_ticker         = input.symbol("FX:USDTRY", "USDTRY Sembolü", group=G5)
+f_usd_duk          = input.string("❌ KAPALI", "USD Bazlı Düşeni Kıran", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_breakout     = input.string("❌ KAPALI", "USD Bazlı Breakout", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_msb          = input.string("❌ KAPALI", "USD Bazlı Market Kırılımı", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_macd         = input.string("❌ KAPALI", "USD Bazlı Macd Al Sinyali", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+usd_macd_zone      = input.string("Her ikisi", "USD Bazlı Macd Sinyal Bölgesi ( Sıfır Seviye Üstü / Altı )", options=["Her ikisi", "Sıfır Üstü", "Sıfır Altı"], group=G5)
+f_usd_wt           = input.string("❌ KAPALI", "USD Bazlı Wave Trend", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+usd_wt_zone        = input.string("Her ikisi", "USD Bazlı Wave Trend Sinyal Bölgesi ( -53 Seviye Üstü / Altı )", options=["Her ikisi", "-53 Üstü", "-53 Altı"], group=G5)
+f_usd_alpha        = input.string("❌ KAPALI", "USD Bazlı Alpha Trend", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_fisher       = input.string("❌ KAPALI", "USD Bazlı Fisher Transform", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_td           = input.string("❌ KAPALI", "USD Bazlı TD Sequential", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+f_usd_chandelier   = input.string("❌ KAPALI", "USD Bazlı Chandelier Exit", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G5)
+
+// ==============================================================================
+// 7. FİBOAYNA TEPKİ HAREKETİ (BİREBİR GÖRSEL 5 MENÜSÜ)
+// ==============================================================================
+var string G6 = "🪞 7. FİBOAYNA TEPKİ HAREKETİ"
+f_fibo_norm        = input.string("❌ KAPALI", "FiboAyna Tepki Hareketi", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G6, inline="fibo1")
+fibo_norm_mode     = input.string("Herhangi Biri", "", options=["Herhangi Biri", "Tümü"], group=G6, inline="fibo1")
+fb_088_100         = input.bool(true, "0,886 / 1,000", group=G6, inline="fb_r1")
+fb_078_088         = input.bool(true, "0,786 / 0,886", group=G6, inline="fb_r1")
+fb_068_078         = input.bool(true, "0,685 / 0,786", group=G6, inline="fb_r1")
+fb_061_068         = input.bool(true, "0,618 / 0,685", group=G6, inline="fb_r2")
+fb_050_061         = input.bool(true, "0,500 / 0,618", group=G6, inline="fb_r2")
+fb_038_050         = input.bool(true, "0,382 / 0,500", group=G6, inline="fb_r2")
+fb_031_038         = input.bool(false, "0,315 / 0,382", group=G6, inline="fb_r3")
+fb_021_031         = input.bool(false, "0,214 / 0,315", group=G6, inline="fb_r3")
+fb_011_021         = input.bool(false, "0,114 / 0,214", group=G6, inline="fb_r3")
+
+f_fibo_comp        = input.string("❌ KAPALI", "FiboAyna Tepki Hareketi ( Kompozit )", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G6, inline="fibo2")
+fibo_comp_mode     = input.string("Herhangi Biri", "", options=["Herhangi Biri", "Tümü"], group=G6, inline="fibo2")
+
+f_fibo_usd         = input.string("❌ KAPALI", "FiboAyna Tepki Hareketi ( USD Bazlı )", options=["❌ KAPALI", "🔒 VAZGEÇİLMEZ", "🎯 KESİN OLSUN", "🟩 OLURSA İYİ OLUR"], group=G6, inline="fibo3")
+fibo_usd_mode      = input.string("Herhangi Biri", "", options=["Herhangi Biri", "Tümü"], group=G6, inline="fibo3")
+
+// ==============================================================================
+// 8. GRAFİK ÇİZİMLERİ & HUD BİLGİ PANELİ
+// ==============================================================================
+var string G7 = "🎨 8. GRAFİK ÇİZİMLERİ & HUD BİLGİ PANELİ"
+show_hud_table     = input.bool(true, "HUD Bilgi Tablosunu Göster", group=G7)
+hud_table_pos      = input.string("Sağ Üst", "Tablo Konumu", options=["Sağ Üst", "Sağ Alt", "Sol Üst", "Sol Alt"], group=G7)
+hud_table_size     = input.string("Küçük (Small)", "Tablo Boyutu", options=["Minik (Tiny)", "Küçük (Small)", "Normal"], group=G7)
+show_mtf_radar     = input.bool(true, "MTF AL/SAT Radar Tablosu (1M, 1W, 1D, 4S, 1S)", group=G7)
+show_fundamental   = input.bool(true, "Temel Analiz Tablosu (F/K, PD/DD)", group=G7)
+
+
+// ==============================================================================
+// KESİNTİSİZ GLOBAL İNDİKATÖR VE GÖSTERGE HESAPLAMALARI
+// (CW10002, CW10003 ve CW10004 uyarılarını tamamen önlemek için her barda koşulsuz çalışır)
+// ==============================================================================
+
+// --- Fiyat ve Hacim ---
+vol_ma20 = ta.sma(volume, 20)
+vol_high = volume > vol_ma20
+
+// Fiyat Ortalamaları
+ema13  = ta.ema(close, 13)
+ema21  = ta.ema(close, 21)
+ema34  = ta.ema(close, 34)
+ema55  = ta.ema(close, 55)
+ema89  = ta.ema(close, 89)
+ema144 = ta.ema(close, 144)
+ema200 = ta.ema(close, 200)
+ema233 = ta.ema(close, 233)
+
+sma34  = ta.sma(close, 34)
+sma50  = ta.sma(close, 50)
+sma55  = ta.sma(close, 55)
+sma89  = ta.sma(close, 89)
+wma89  = ta.wma(close, 89)
+wma144 = ta.wma(close, 144)
+
+plot(show_ma_plots ? ema21 : na, title="21 EMA", color=color.blue, linewidth=1)
+plot(show_ma_plots ? ema55 : na, title="55 EMA", color=color.orange, linewidth=2)
+plot(show_ma_plots ? ema200 : na, title="200 EMA", color=color.purple, linewidth=2)
+
+// Sıkışma (13-21-34-55)
+max_ema = math.max(ema13, ema21, ema34, ema55)
+min_ema = math.min(ema13, ema21, ema34, ema55)
+ema_spread = ((max_ema - min_ema) / (min_ema == 0.0 ? 1.0 : min_ema)) * 100.0
+is_squeezed = ema_spread <= 1.5
+bgcolor(is_squeezed ? color.new(color.purple, 90) : na, title="MA Sıkışma")
+
+// Pivotlar (DÜK & Breakout)
+pivot_high = ta.pivothigh(high, 5, 5)
+pivot_low  = ta.pivotlow(low, 5, 5)
+
+var float last_ph_price = na
+var int   last_ph_bar   = na
+var float prev_ph_price = na
+var int   prev_ph_bar   = na
+
+var float last_pl_price = na
+var int   last_pl_bar   = na
+
+if not na(pivot_high)
+    prev_ph_price := last_ph_price
+    prev_ph_bar   := last_ph_bar
+    last_ph_price := pivot_high
+    last_ph_bar   := bar_index - 5
+
+if not na(pivot_low)
+    last_pl_price := pivot_low
+    last_pl_bar   := bar_index - 5
+
+// --- Global DÜK Doğrusu Hesabı (Local scope hatasını önlemek için en üst seviyede tanımlanır) ---
+duk_dx    = not na(last_ph_bar) and not na(prev_ph_bar) and (last_ph_bar != prev_ph_bar) ? float(last_ph_bar - prev_ph_bar) : 1.0
+duk_slope = not na(last_ph_price) and not na(prev_ph_price) ? (last_ph_price - prev_ph_price) / duk_dx : 0.0
+duk_proj  = not na(last_ph_price) and not na(last_ph_bar) and (last_ph_price < prev_ph_price) ? last_ph_price + duk_slope * (bar_index - last_ph_bar) : na
+
+// --- Osilatörler (Fiyat Bazlı) ---
+rsi14 = ta.rsi(close, 14)
+mom10 = ta.mom(close, 10)
+stoch_k = ta.sma(ta.stoch(close, high, low, 14), 3)
+
+// ADX
+adx_up = ta.change(high)
+adx_down = -ta.change(low)
+adx_plusDM = na(adx_up) ? na : (adx_up > adx_down and adx_up > 0.0 ? adx_up : 0.0)
+adx_minusDM = na(adx_down) ? na : (adx_down > adx_up and adx_down > 0.0 ? adx_down : 0.0)
+adx_trur = ta.rma(ta.tr, 14)
+adx_plus = fixnan(100.0 * ta.rma(adx_plusDM, 14) / (adx_trur == 0.0 ? 1.0 : adx_trur))
+adx_minus = fixnan(100.0 * ta.rma(adx_minusDM, 14) / (adx_trur == 0.0 ? 1.0 : adx_trur))
+adx_sum = adx_plus + adx_minus
+adx_val = 100.0 * ta.rma(math.abs(adx_plus - adx_minus) / (adx_sum == 0.0 ? 1.0 : adx_sum), 14)
+
+// CMF, MFI, OBV
+cmf_mfv = ((close - low) - (high - close)) / (high - low == 0.0 ? 1.0 : high - low) * volume
+cmf_val = ta.sma(cmf_mfv, 20) / (vol_ma20 == 0.0 ? 1.0 : vol_ma20)
+mfi_val = ta.mfi(hlc3, 14)
+obv_val = ta.obv
+obv_ema = ta.ema(obv_val, 20)
+
+// Wave Trend
+wt_ap = hlc3
+wt_esa = ta.ema(wt_ap, 10)
+wt_d = ta.ema(math.abs(wt_ap - wt_esa), 10)
+wt_ci = (wt_ap - wt_esa) / (0.015 * (wt_d == 0.0 ? 1.0 : wt_d))
+wt1 = ta.ema(wt_ci, 21)
+wt2 = ta.sma(wt1, 4)
+
+// MACD
+[macd_line, macd_signal, macd_hist] = ta.macd(close, 12, 26, 9)
+
+// Fisher Transform (Fiyat)
+fish_h = ta.highest(high, 9)
+fish_l = ta.lowest(low, 9)
+fish_diff = fish_h - fish_l == 0.0 ? 1.0 : fish_h - fish_l
+fish_raw = 0.66 * ((hlc3 - fish_l) / fish_diff - 0.5)
+var float fish_val_inter = 0.0
+fish_val_inter := 0.67 * nz(fish_val_inter[1]) + 0.33 * fish_raw
+fish_clamped = math.max(math.min(fish_val_inter, 0.999), -0.999)
+var float fish_res = 0.0
+fish_res := 0.5 * math.log((1.0 + fish_clamped) / (1.0 - fish_clamped)) + 0.5 * nz(fish_res[1])
+fish_prev = nz(fish_res[1])
+
+// TP & SL Seviyeleri (ATR Bazlı)
+atr14 = ta.atr(14)
+tp1_val = close + atr14 * 1.5
+tp2_val = close + atr14 * 2.5
+tp3_val = close + atr14 * 4.0
+sl_val  = close - atr14 * 1.5
+
+
+// ==============================================================================
+// GÜVENLİK / REQUEST ÇAĞRILARI (XU100, USDTRY & MTF)
+// ==============================================================================
+
+xu100_close = request.security(xu100_ticker, timeframe.period, close, barmerge.gaps_off, barmerge.lookahead_off)
+composite_ratio = not na(xu100_close) and xu100_close > 0.0 ? (close / xu100_close) : na
+
+// Kompozit ve USD Serileri (CW10004 uyarılarını önlemek için ta.ema doğrudan seriye bağlanır)
+comp_series = not na(composite_ratio) ? composite_ratio : close
+comp_ema34  = ta.ema(comp_series, 34)
+comp_ema233 = ta.ema(comp_series, 233)
+comp_high_20 = ta.highest(comp_series, 20)
+
+usd_close = request.security(usd_ticker, timeframe.period, close, barmerge.gaps_off, barmerge.lookahead_off)
+usd_price = not na(usd_close) and usd_close > 0.0 ? (close / usd_close) : na
+usd_series = not na(usd_price) ? usd_price : close
+usd_ema34  = ta.ema(usd_series, 34)
+usd_high_20 = ta.highest(usd_series, 20)
+usd_high_10 = ta.highest(usd_series, 10)
+
+// Kompozit Wave Trend & MACD
+comp_esa = ta.ema(comp_series, 10)
+comp_d = ta.ema(math.abs(comp_series - comp_esa), 10)
+comp_ci = (comp_series - comp_esa) / (0.015 * (comp_d == 0.0 ? 1.0 : comp_d))
+comp_wt1 = ta.ema(comp_ci, 21)
+comp_wt2 = ta.sma(comp_wt1, 4)
+[comp_macd, comp_macd_sig, comp_macd_h] = ta.macd(comp_series, 12, 26, 9)
+
+// USD Wave Trend & MACD
+usd_esa = ta.ema(usd_series, 10)
+usd_d = ta.ema(math.abs(usd_series - usd_esa), 10)
+usd_ci = (usd_series - usd_esa) / (0.015 * (usd_d == 0.0 ? 1.0 : usd_d))
+usd_wt1 = ta.ema(usd_ci, 21)
+usd_wt2 = ta.sma(usd_wt1, 4)
+[usd_macd, usd_macd_sig, usd_macd_h] = ta.macd(usd_series, 12, 26, 9)
+
+// TD Sequential Setup (Fiyat, Kompozit, USD)
+var int td_cnt = 0
+td_cnt := close < close[4] ? td_cnt + 1 : 0
+is_td_setup = td_cnt == 9
+
+var int comp_td_cnt = 0
+comp_td_cnt := not na(composite_ratio) and composite_ratio < composite_ratio[4] ? comp_td_cnt + 1 : 0
+is_comp_td = comp_td_cnt == 9
+
+var int usd_td_cnt = 0
+usd_td_cnt := not na(usd_price) and usd_price < usd_price[4] ? usd_td_cnt + 1 : 0
+is_usd_td = usd_td_cnt == 9
+
+// Chandelier Exit USD
+usd_chandelier = ta.highest(usd_series, 22) - ta.atr(22) * 3.0
+is_usd_chandelier_bull = usd_series > usd_chandelier
+
+// MTF Radar
+mtf_1m  = show_mtf_radar ? request.security(syminfo.tickerid, "1M", close > ta.ema(close, 20), barmerge.gaps_off, barmerge.lookahead_off) : false
+mtf_1w  = show_mtf_radar ? request.security(syminfo.tickerid, "1W", close > ta.ema(close, 20), barmerge.gaps_off, barmerge.lookahead_off) : false
+mtf_1d  = show_mtf_radar ? request.security(syminfo.tickerid, "1D", close > ta.ema(close, 20), barmerge.gaps_off, barmerge.lookahead_off) : false
+mtf_240 = show_mtf_radar ? request.security(syminfo.tickerid, "240", close > ta.ema(close, 20), barmerge.gaps_off, barmerge.lookahead_off) : false
+mtf_60  = show_mtf_radar ? request.security(syminfo.tickerid, "60", close > ta.ema(close, 20), barmerge.gaps_off, barmerge.lookahead_off) : false
+
+// Temel Analiz
+f_pe = show_fundamental ? request.financial(syminfo.tickerid, "PRICE_EARNINGS_TTM", "FQ") : na
+f_pb = show_fundamental ? request.financial(syminfo.tickerid, "PRICE_BOOK_RATIO", "FQ") : na
+
+
+// ==============================================================================
+// KOŞULSUZ GLOBAL KESİŞİMLER (HER BARDA TEK SEFER ÇALIŞIR, CW10002'Yİ SIFIRLAR)
+// ==============================================================================
+
+cross_rsi_30      = ta.crossover(rsi14, 30.0)
+cross_mfi_30      = ta.crossover(mfi_val, 30.0)
+cross_wt          = ta.crossover(wt1, wt2)
+cross_macd        = ta.crossover(macd_line, macd_signal)
+cross_fisher      = ta.crossover(fish_res, fish_prev)
+cross_eff_ma      = ta.crossover(close, sma50)
+cross_ma_34_55    = ta.crossover(sma34, sma55)
+cross_ma_34_89    = ta.crossover(sma34, wma89)
+
+cross_last_ph     = not na(last_ph_price) and close > last_ph_price and close[1] <= nz(last_ph_price[1], last_ph_price)
+
+comp_cross_wt     = ta.crossover(comp_wt1, comp_wt2)
+comp_cross_macd   = ta.crossover(comp_macd, comp_macd_sig)
+comp_cross_ema34  = not na(composite_ratio) and composite_ratio > comp_ema34 and nz(composite_ratio[1]) <= nz(comp_ema34[1])
+comp_cross_ema233 = not na(composite_ratio) and composite_ratio > comp_ema233 and nz(composite_ratio[1]) <= nz(comp_ema233[1])
+
+usd_cross_wt      = ta.crossover(usd_wt1, usd_wt2)
+usd_cross_macd    = ta.crossover(usd_macd, usd_macd_sig)
+usd_cross_ema34   = not na(usd_price) and usd_price > usd_ema34 and nz(usd_price[1]) <= nz(usd_ema34[1])
+
+
+// ==============================================================================
+// SİNYAL TESPİTLERİ (HER KRİTER İÇİN BOOLEAN DEĞERLER)
+// ==============================================================================
+
+// 1. DÜK (Düşeni Kıran)
+bool sig_duk = false
+var line duk_line = na
+if not na(duk_proj) and close > duk_proj and close[1] <= nz(duk_proj[1], duk_proj) and vol_high
+    sig_duk := true
+    if not na(duk_line)
+        line.delete(duk_line)
+    duk_line := line.new(prev_ph_bar, prev_ph_price, bar_index, close, color=color.yellow, width=2)
+
+// 2. Breakout & MSB
+bool sig_breakout = cross_last_ph and (volume > vol_ma20 * 1.3)
+bool sig_msb      = cross_last_ph
+
+// 3. Ayı Tuzağı
+bool sig_bear_trap = not na(last_pl_price) and low[1] < last_pl_price and close > last_pl_price and vol_high
+
+// 4. Order Block & FVG
+var array<box> ob_boxes = array.new<box>()
+var array<box> fvg_boxes = array.new<box>()
+bool sig_ob_fvg = false
+
+if sig_msb and bar_index > 5
+    sig_ob_fvg := true
+    if draw_ob_boxes
+        new_ob = box.new(left=bar_index - 2, top=math.max(open[1], close[1]), right=bar_index + 10, bottom=math.min(open[1], close[1]), 
+                         border_color=color.green, bgcolor=color.new(color.green, 85), text="OB", text_color=color.white, text_size=size.tiny)
+        array.push(ob_boxes, new_ob)
+        if array.size(ob_boxes) > 5
+            box.delete(array.shift(ob_boxes))
+
+if (low > high[2])
+    sig_ob_fvg := true
+    if draw_fvg_boxes
+        new_fvg = box.new(left=bar_index - 2, top=low, right=bar_index + 8, bottom=high[2], 
+                          border_color=color.aqua, bgcolor=color.new(color.aqua, 85), text="FVG", text_color=color.white, text_size=size.tiny)
+        array.push(fvg_boxes, new_fvg)
+        if array.size(fvg_boxes) > 5
+            box.delete(array.shift(fvg_boxes))
+
+// 5. Güçlü Mum Formasyonu (Çekiç / Yutan Boğa)
+is_hammer = (high - low > 3.0 * math.abs(open - close)) and ((close - low) / (0.001 + high - low) > 0.6) and ((open - low) / (0.001 + high - low) > 0.6)
+is_engulf = close[1] < open[1] and close > open and close > open[1] and open < close[1]
+bool sig_strong_candle = is_hammer or is_engulf
+
+// 6. MA Sinyalleri
+bool sig_ma_cross = cross_ma_34_55 or cross_ma_34_89
+bool sig_ma_above = close > ema144 and close > ema200 and close > ema233
+bool sig_ma_retest = math.abs(low - ema89) / ema89 <= 0.008 and close > ema89
+bool sig_eff_ma   = cross_eff_ma
+bool sig_ma_squeeze = is_squeezed
+
+// 7. Osilatör Sinyalleri
+bool sig_rsi_dip   = cross_rsi_30 and (mom10 > -10.0) and (stoch_k < 45.0) and vol_high and (adx_val > 18.0)
+bool sig_rsi_zone  = rsi14 > 40.0 and rsi14 > rsi14[1]
+bool sig_smc       = (cmf_val > 0.05) and (mfi_val > 50.0 or cross_mfi_30) and (obv_val > obv_ema)
+
+bool sig_wt = wt_zone == "-53 Seviye Altı" ? (cross_wt and wt1 < -53.0) : wt_zone == "-53 Seviye Üstü" ? (cross_wt and wt1 > -53.0) : cross_wt
+bool sig_macd = macd_zone == "Sıfır Seviye Altı" ? (cross_macd and macd_line < 0.0) : macd_zone == "Sıfır Seviye Üstü" ? (cross_macd and macd_line > 0.0) : cross_macd
+bool sig_fisher = cross_fisher
+
+bool sig_div = false
+if not na(last_pl_price) and not na(last_pl_bar)
+    pl_off = bar_index - last_pl_bar
+    if pl_off > 0 and pl_off < 100
+        if (low[5] < last_pl_price) and (rsi14[5] > rsi14[pl_off])
+            sig_div := true
+
+// 8. Kompozit Sinyaller
+bool sig_comp_duk = comp_cross_ema34 and vol_high
+bool sig_comp_breakout = comp_cross_ema233
+bool sig_comp_msb = not na(composite_ratio) and composite_ratio > comp_high_20[1]
+bool sig_comp_macd = comp_macd_zone == "Sıfır Altı" ? (comp_cross_macd and comp_macd < 0.0) : comp_macd_zone == "Sıfır Üstü" ? (comp_cross_macd and comp_macd > 0.0) : comp_cross_macd
+bool sig_comp_wt = comp_wt_zone == "-53 Altı" ? (comp_cross_wt and comp_wt1 < -53.0) : comp_wt_zone == "-53 Üstü" ? (comp_cross_wt and comp_wt1 > -53.0) : comp_cross_wt
+bool sig_comp_alpha = comp_cross_ema34
+bool sig_comp_fisher = not na(composite_ratio) and composite_ratio > composite_ratio[1] and composite_ratio[1] <= composite_ratio[2]
+bool sig_comp_td = is_comp_td
+
+// 9. USD Bazlı Sinyaller
+bool sig_usd_duk = usd_cross_ema34 and vol_high
+bool sig_usd_breakout = not na(usd_price) and usd_price > usd_high_20[1]
+bool sig_usd_msb = not na(usd_price) and usd_price > usd_high_10[1]
+bool sig_usd_macd = usd_macd_zone == "Sıfır Altı" ? (usd_cross_macd and usd_macd < 0.0) : usd_macd_zone == "Sıfır Üstü" ? (usd_cross_macd and usd_macd > 0.0) : usd_cross_macd
+bool sig_usd_wt = usd_wt_zone == "-53 Altı" ? (usd_cross_wt and usd_wt1 < -53.0) : usd_wt_zone == "-53 Üstü" ? (usd_cross_wt and usd_wt1 > -53.0) : usd_cross_wt
+bool sig_usd_alpha = usd_cross_ema34
+bool sig_usd_fisher = not na(usd_price) and usd_price > usd_price[1] and usd_price[1] <= usd_price[2]
+bool sig_usd_td = is_usd_td
+bool sig_usd_chandelier = is_usd_chandelier_bull
+
+// 10. FiboAyna Tepki Sinyali
+bool sig_fibo_norm = false
+if not na(last_ph_price) and not na(last_pl_price) and last_ph_price > last_pl_price
+    f_diff = last_ph_price - last_pl_price
+    curr_ratio = (close - last_pl_price) / (f_diff == 0.0 ? 1.0 : f_diff)
+    if (fb_088_100 and curr_ratio >= 0.886 and curr_ratio <= 1.000) or (fb_078_088 and curr_ratio >= 0.786 and curr_ratio < 0.886) or (fb_068_078 and curr_ratio >= 0.685 and curr_ratio < 0.786) or (fb_061_068 and curr_ratio >= 0.618 and curr_ratio < 0.685) or (fb_050_061 and curr_ratio >= 0.500 and curr_ratio < 0.618) or (fb_038_050 and curr_ratio >= 0.382 and curr_ratio < 0.500) or (fb_031_038 and curr_ratio >= 0.315 and curr_ratio < 0.382) or (fb_021_031 and curr_ratio >= 0.214 and curr_ratio < 0.315) or (fb_011_021 and curr_ratio >= 0.114 and curr_ratio < 0.214)
+        sig_fibo_norm := true
+
+bool sig_fibo_comp = comp_cross_ema34
+bool sig_fibo_usd  = usd_cross_ema34
+
+
+// ==============================================================================
+// GÖRSEL 4 BİREBİR FİLTRE DEĞERLENDİRME & ALARM LİSTESİ OLUŞTURMA
+// ==============================================================================
+
+var array<string> active_signal_names = array.new<string>()
+array.clear(active_signal_names)
+
+int c_v_tot = 0
+int c_v_pass = 0
+int c_k_tot = 0
+int c_k_pass = 0
+int c_o_tot = 0
+int c_o_pass = 0
+int teknik_puan = 0
+int total_active_signals = 0
+
+// Kural Kontrol Fonksiyonu
+check_rule(string mode, bool is_met, int points, string sig_name) =>
+    int v_t = mode == OP_VAZ ? 1 : 0
+    int v_p = mode == OP_VAZ and is_met ? 1 : 0
+    int k_t = mode == OP_KES ? 1 : 0
+    int k_p = mode == OP_KES and is_met ? 1 : 0
+    int o_t = mode == OP_OLU ? 1 : 0
+    int o_p = mode == OP_OLU and is_met ? 1 : 0
+    int pts = is_met ? points : 0
+    int act = (mode != OP_OFF and is_met) ? 1 : 0
+    string nm = (mode != OP_OFF and is_met) ? sig_name : ""
+    [v_t, v_p, k_t, k_p, o_t, o_p, pts, act, nm]
+
+accumulate_rule(string mode, bool is_met, int points, string sig_name) =>
+    [v_t, v_p, k_t, k_p, o_t, o_p, pts, act, nm] = check_rule(mode, is_met, points, sig_name)
+    if nm != ""
+        array.push(active_signal_names, nm)
+    [v_t, v_p, k_t, k_p, o_t, o_p, pts, act]
+
+// --- Tüm Kuralların Toplanması ---
+[v1, vp1, k1, kp1, o1, op1, p1, a1] = accumulate_rule(f_duk, sig_duk, 10, "Düşeni Kıran")
+[v2, vp2, k2, kp2, o2, op2, p2, a2] = accumulate_rule(f_breakout, sig_breakout, 8, "Breakout")
+[v3, vp3, k3, kp3, o3, op3, p3, a3] = accumulate_rule(f_msb, sig_msb, 8, "Market Kırılımı")
+[v4, vp4, k4, kp4, o4, op4, p4, a4] = accumulate_rule(f_bear_trap, sig_bear_trap, 5, "Ayı Tuzağı & GAP")
+[v5, vp5, k5, kp5, o5, op5, p5, a5] = accumulate_rule(f_ob_fvg, sig_ob_fvg, 6, "Order Block & FVG")
+[v6, vp6, k6, kp6, o6, op6, p6, a6] = accumulate_rule(f_strong_candle, sig_strong_candle, 5, "Güçlü Mum Formasyonu")
+
+[v7, vp7, k7, kp7, o7, op7, p7, a7] = accumulate_rule(f_ma_cross, sig_ma_cross, 6, "34 SMA - 55 SMA - 89 WMA Yukarı Keser")
+[v8, vp8, k8, kp8, o8, op8, p8, a8] = accumulate_rule(f_ma_above, sig_ma_above, 5, "Fiyat 144 EMA - 200 EMA - 233 EMA Üstünde")
+[v9, vp9, k9, kp9, o9, op9, p9, a9] = accumulate_rule(f_ma_retest, sig_ma_retest, 5, "34 VAR - 89 SMA - 144 WMA Retest")
+[v10, vp10, k10, kp10, o10, op10, p10, a10] = accumulate_rule(f_eff_ma, sig_eff_ma, 6, "En Efektif Ortalama 50 SMA Yukarı Keser")
+[v11, vp11, k11, kp11, o11, op11, p11, a11] = accumulate_rule(f_ma_squeeze, sig_ma_squeeze, 5, "Ortalamalar Yakın (Sıkışma)")
+
+[v12, vp12, k12, kp12, o12, op12, p12, a12] = accumulate_rule(f_rsi_dip, sig_rsi_dip, 10, "RSI Dipten Dönüş Sistemi")
+[v13, vp13, k13, kp13, o13, op13, p13, a13] = accumulate_rule(f_rsi_zone, sig_rsi_zone, 4, "RSI 40 Üstünde")
+[v14, vp14, k14, kp14, o14, op14, p14, a14] = accumulate_rule(f_smc_inflow, sig_smc, 8, "Hacim & Momentum Pozitif (SMC Para Girişi)")
+[v15, vp15, k15, kp15, o15, op15, p15, a15] = accumulate_rule(f_wavetrend, sig_wt, 7, "Wave Trend AL Sinyali")
+[v16, vp16, k16, kp16, o16, op16, p16, a16] = accumulate_rule(f_macd, sig_macd, 7, "MACDAS AL Sinyali")
+[v17, vp17, k17, kp17, o17, op17, p17, a17] = accumulate_rule(f_fisher, sig_fisher, 6, "Fisher Transform AL Sinyali")
+[v18, vp18, k18, kp18, o18, op18, p18, a18] = accumulate_rule(f_divergence, sig_div, 6, "Pozitif Uyumsuzluk")
+
+[v19, vp19, k19, kp19, o19, op19, p19, a19] = accumulate_rule(f_comp_duk, sig_comp_duk, 6, "Kompozit Düşeni Kıran")
+[v20, vp20, k20, kp20, o20, op20, p20, a20] = accumulate_rule(f_comp_breakout, sig_comp_breakout, 5, "Kompozit Breakout")
+[v21, vp21, k21, kp21, o21, op21, p21, a21] = accumulate_rule(f_comp_msb, sig_comp_msb, 5, "Kompozit Market Kırılımı")
+[v22, vp22, k22, kp22, o22, op22, p22, a22] = accumulate_rule(f_comp_macd, sig_comp_macd, 5, "Kompozit Macd AL")
+[v23, vp23, k23, kp23, o23, op23, p23, a23] = accumulate_rule(f_comp_wt, sig_comp_wt, 5, "Kompozit Wave Trend AL")
+[v24, vp24, k24, kp24, o24, op24, p24, a24] = accumulate_rule(f_comp_alpha, sig_comp_alpha, 4, "Kompozit Alpha Trend")
+[v25, vp25, k25, kp25, o25, op25, p25, a25] = accumulate_rule(f_comp_fisher, sig_comp_fisher, 4, "Kompozit Fisher Transform")
+[v26, vp26, k26, kp26, o26, op26, p26, a26] = accumulate_rule(f_comp_td, sig_comp_td, 4, "Kompozit TD Sequential")
+
+[v27, vp27, k27, kp27, o27, op27, p27, a27] = accumulate_rule(f_usd_duk, sig_usd_duk, 6, "USD Bazlı Düşeni Kıran")
+[v28, vp28, k28, kp28, o28, op28, p28, a28] = accumulate_rule(f_usd_breakout, sig_usd_breakout, 5, "USD Bazlı Breakout")
+[v29, vp29, k29, kp29, o29, op29, p29, a29] = accumulate_rule(f_usd_msb, sig_usd_msb, 5, "USD Bazlı Market Kırılımı")
+[v30, vp30, k30, kp30, o30, op30, p30, a30] = accumulate_rule(f_usd_macd, sig_usd_macd, 5, "USD Bazlı Macd AL")
+[v31, vp31, k31, kp31, o31, op31, p31, a31] = accumulate_rule(f_usd_wt, sig_usd_wt, 5, "USD Bazlı Wave Trend AL Sinyali")
+[v32, vp32, k32, kp32, o32, op32, p32, a32] = accumulate_rule(f_usd_alpha, sig_usd_alpha, 4, "USD Bazlı 34 EMA Yukarı Keser")
+[v33, vp33, k33, kp33, o33, op33, p33, a33] = accumulate_rule(f_usd_fisher, sig_usd_fisher, 4, "USD Bazlı Fisher Transform AL Sinyali")
+[v34, vp34, k34, kp34, o34, op34, p34, a34] = accumulate_rule(f_usd_td, sig_usd_td, 4, "USD Bazlı TD Sequential")
+[v35, vp35, k35, kp35, o35, op35, p35, a35] = accumulate_rule(f_usd_chandelier, sig_usd_chandelier, 4, "USD Bazlı Chandelier Exit")
+
+[v36, vp36, k36, kp36, o36, op36, p36, a36] = accumulate_rule(f_fibo_norm, sig_fibo_norm, 5, "FiboAyna Tepki Hareketi")
+[v37, vp37, k37, kp37, o37, op37, p37, a37] = accumulate_rule(f_fibo_comp, sig_fibo_comp, 4, "FiboAyna Kompozit")
+[v38, vp38, k38, kp38, o38, op38, p38, a38] = accumulate_rule(f_fibo_usd, sig_fibo_usd, 4, "FiboAyna USD Bazlı")
+
+// Toplam Sayaçlar
+c_v_tot := v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28+v29+v30+v31+v32+v33+v34+v35+v36+v37+v38
+c_v_pass := vp1+vp2+vp3+vp4+vp5+vp6+vp7+vp8+vp9+vp10+vp11+vp12+vp13+vp14+vp15+vp16+vp17+vp18+vp19+vp20+vp21+vp22+vp23+vp24+vp25+vp26+vp27+vp28+vp29+vp30+vp31+vp32+vp33+vp34+vp35+vp36+vp37+vp38
+c_k_tot := k1+k2+k3+k4+k5+k6+k7+k8+k9+k10+k11+k12+k13+k14+k15+k16+k17+k18+k19+k20+k21+k22+k23+k24+k25+k26+k27+k28+k29+k30+k31+k32+k33+k34+k35+k36+k37+k38
+c_k_pass := kp1+kp2+kp3+kp4+kp5+kp6+kp7+kp8+kp9+kp10+kp11+kp12+kp13+kp14+kp15+kp16+kp17+kp18+kp19+kp20+kp21+kp22+kp23+kp24+kp25+kp26+kp27+kp28+kp29+kp30+kp31+kp32+kp33+kp34+kp35+kp36+kp37+kp38
+c_o_tot := o1+o2+o3+o4+o5+o6+o7+o8+o9+o10+o11+o12+o13+o14+o15+o16+o17+o18+o19+o20+o21+o22+o23+o24+o25+o26+o27+o28+o29+o30+o31+o32+o33+o34+o35+o36+o37+o38
+c_o_pass := op1+op2+op3+op4+op5+op6+op7+op8+op9+op10+op11+op12+op13+op14+op15+op16+op17+op18+op19+op20+op21+op22+op23+op24+op25+op26+op27+op28+op29+op30+op31+op32+op33+op34+op35+op36+op37+op38
+
+raw_puan = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14+p15+p16+p17+p18+p19+p20+p21+p22+p23+p24+p25+p26+p27+p28+p29+p30+p31+p32+p33+p34+p35+p36+p37+p38
+teknik_puan := math.min(100, raw_puan)
+total_active_signals := a1+a2+a3+a4+a5+a6+a7+a8+a9+a10+a11+a12+a13+a14+a15+a16+a17+a18+a19+a20+a21+a22+a23+a24+a25+a26+a27+a28+a29+a30+a31+a32+a33+a34+a35+a36+a37+a38
+
+// Mantıksal Filtre Kontrolü (Görsel 4 Kuralı)
+// 1. VAZGEÇİLMEZ: Hepsi aynı anda şart. Biri eksikse hisse elenir.
+vazgecilmez_ok = (c_v_tot == 0) or (c_v_pass == c_v_tot)
+
+// 2. KESİN OLSUN: Ayrı Ayrı modunda biri yeter, yanındaki sinyal ek onay olmalıdır. Aynı Anda modunda hepsi şarttır.
+kesin_ok = true
+if c_k_tot > 0
+    if filter_logic_mode == "Ayrı Ayrı (OR)"
+        kesin_ok := (c_k_pass >= 1) and (total_active_signals >= 2)
+    else if filter_logic_mode == "Aynı Anda (AND)"
+        kesin_ok := (c_k_pass == c_k_tot)
+
+// 3. OLURSA İYİ OLUR: Yalnız bunlar seçiliyse biri veya hepsi aranır.
+olursa_ok = true
+if (c_v_tot == 0 and c_k_tot == 0 and c_o_tot > 0)
+    if filter_logic_mode == "Ayrı Ayrı (OR)"
+        olursa_ok := c_o_pass >= 1
+    else if filter_logic_mode == "Aynı Anda (AND)"
+        olursa_ok := c_o_pass == c_o_tot
+
+// 4. Nihai Karar
+bool is_signal_triggered = false
+if filter_logic_mode == "⭐ Şampiyon Taraması (Puanlama)"
+    is_signal_triggered := teknik_puan >= min_champ_score
+else
+    is_signal_triggered := vazgecilmez_ok and kesin_ok and olursa_ok and (total_active_signals > 0)
+
+// Grafik Üzeri Görsel Sinyal Etiketleri
+plotshape(is_signal_triggered, title="Multicator AL Sinyali", style=shape.labelup, 
+          location=location.belowbar, color=color.new(#00E676, 0), text="MULTICATOR\nAL ⭐", 
+          textcolor=color.black, size=size.normal)
+
+plotshape(sig_duk, title="DÜK Sinyali", style=shape.triangleup, 
+          location=location.belowbar, color=color.yellow, text="DÜK", 
+          textcolor=color.black, size=size.tiny)
+
+
+// ==============================================================================
+// GÖRSEL PANEL: HUD TABLOSU & CANLI RADAR
+// ==============================================================================
+
+var table hud_table = na
+table_pos_val = hud_table_pos == "Sağ Üst" ? position.top_right : hud_table_pos == "Sağ Alt" ? position.bottom_right : hud_table_pos == "Sol Üst" ? position.top_left : position.bottom_left
+table_size_val = hud_table_size == "Minik (Tiny)" ? size.tiny : hud_table_size == "Küçük (Small)" ? size.small : size.normal
+
+if show_hud_table and barstate.islast
+    hud_table := table.new(position=table_pos_val, columns=2, rows=12, 
+                           bgcolor=color.new(#131722, 10), border_color=color.new(color.gray, 60), 
+                           border_width=1)
+    
+    table.cell(hud_table, 0, 0, "MULTICATOR - BİST", bgcolor=color.new(#880E4F, 0), text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 0, "RADAR DURUMU", bgcolor=color.new(#880E4F, 0), text_color=color.white, text_size=table_size_val)
+    
+    score_col = teknik_puan >= 70 ? color.green : teknik_puan >= 50 ? color.yellow : color.red
+    table.cell(hud_table, 0, 1, "🏆 Teknik Puan", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 1, str.tostring(teknik_puan) + " / 100 " + (is_signal_triggered ? "⭐ AL" : "BEKLE"), bgcolor=score_col, text_color=color.black, text_size=table_size_val)
+    
+    if show_mtf_radar
+        mtf_str = (mtf_1m ? "🟢1M " : "🔴1M ") + (mtf_1w ? "🟢1W " : "🔴1W ") + (mtf_1d ? "🟢1D " : "🔴1D ") + (mtf_240 ? "🟢4S " : "🔴4S ") + (mtf_60 ? "🟢1S" : "🔴1S")
+        table.cell(hud_table, 0, 2, "⏱️ MTF Trend (1M..1S)", text_color=color.white, text_size=table_size_val)
+        table.cell(hud_table, 1, 2, mtf_str, text_color=color.white, text_size=table_size_val)
+        
+    pa_str = sig_duk ? "DÜK AKTİF 🚀" : sig_msb ? "MSB KIRILDI ✅" : sig_breakout ? "BREAKOUT 🔥" : "NÖTR"
+    table.cell(hud_table, 0, 3, "📌 Price Action", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 3, pa_str, text_color=(sig_duk or sig_msb or sig_breakout ? color.green : color.gray), text_size=table_size_val)
+    
+    table.cell(hud_table, 0, 4, "🐋 Akıllı Para (SMC)", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 4, sig_smc ? "GİRİŞ ONAYLI ✅" : "NÖTR", text_color=(sig_smc ? color.green : color.gray), text_size=table_size_val)
+    
+    table.cell(hud_table, 0, 5, "📈 Kompozit XU100", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 5, sig_comp_duk or sig_comp_breakout ? "ENDEKSTEN GÜÇLÜ 🚀" : "NORMAL", text_color=(sig_comp_duk ? color.green : color.gray), text_size=table_size_val)
+    
+    table.cell(hud_table, 0, 6, "⚡ MA Sıkışma", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 6, is_squeezed ? "PATLAMA YAKIN 🔥" : "NORMAL", text_color=(is_squeezed ? color.yellow : color.gray), text_size=table_size_val)
+    
+    table.cell(hud_table, 0, 7, "🎯 RSI Durumu", text_color=color.white, text_size=table_size_val)
+    table.cell(hud_table, 1, 7, str.tostring(rsi14, "#.##") + (sig_rsi_dip ? " (DİP DÖNÜŞ)" : ""), text_color=(sig_rsi_dip ? color.green : color.white), text_size=table_size_val)
+
+    if show_fundamental
+        pe_str = na(f_pe) ? "N/A" : str.tostring(f_pe, "#.##")
+        pb_str = na(f_pb) ? "N/A" : str.tostring(f_pb, "#.##")
+        table.cell(hud_table, 0, 8, "📊 F/K Oranı", text_color=color.white, text_size=table_size_val)
+        table.cell(hud_table, 1, 8, pe_str, text_color=color.white, text_size=table_size_val)
+        table.cell(hud_table, 0, 9, "📑 PD/DD Oranı", text_color=color.white, text_size=table_size_val)
+        table.cell(hud_table, 1, 9, pb_str, text_color=color.white, text_size=table_size_val)
+
+
+// ==============================================================================
+// GÖRSEL 1 BİREBİR TELEGRAM / BİLDİRİM VE BEKÇİ MOTORU
+// ==============================================================================
+
+var bool was_signaled = false
+is_new_alert = is_signal_triggered and not was_signaled
+is_dropped   = not is_signal_triggered and was_signaled
+
+var string last_dropped_symbol = "Yok"
+if is_dropped
+    last_dropped_symbol := syminfo.ticker
+
+if barstate.isconfirmed or not cautious_alarm
+    was_signaled := is_signal_triggered
+
+alert_fire = cautious_alarm ? (barstate.isconfirmed and is_signal_triggered) : is_signal_triggered
+
+if alert_fire and (not alert_only_new or is_new_alert)
+    signals_joined = array.join(active_signal_names, ", ")
+    string alert_msg = "Multicator - BiST\n"
+    alert_msg += "BORSA İSTANBUL (Tarama Periyodu : " + timeframe.period + ")\n\n"
+    alert_msg += "🆕 " + syminfo.ticker + " (" + syminfo.description + ")\n"
+    alert_msg += "Teknik Puan = " + str.tostring(teknik_puan) + " / 100\n\n"
+    alert_msg += "-> " + signals_joined + "\n\n"
+    alert_msg += "TP1=> " + str.tostring(tp1_val, "#.##") + "\n"
+    alert_msg += "TP2=> " + str.tostring(tp2_val, "#.##") + "\n"
+    alert_msg += "TP3=> " + str.tostring(tp3_val, "#.##") + "\n"
+    alert_msg += "SL=> " + str.tostring(sl_val, "#.##") + "\n\n"
+    alert_msg += "📉 LİSTEDEN DÜŞENLER: " + last_dropped_symbol + "\n\n"
+    alert_msg += "ASLA YATIRIM TAVSİYESİ DEĞİLDİR. GRAFİK KONTROLÜ ÇOK ÖNEMLİDİR"
+    alert(alert_msg, alert.freq_once_per_bar_close)
+
+alertcondition(is_signal_triggered, title="Multicator BiST AL", message="Multicator - BiST: {{ticker}} Sinyal Tetiklendi! Fiyat: {{close}}")
+alertcondition(sig_duk, title="Düşeni Kıran (DÜK)", message="[DÜK] {{ticker}} Düşen Trend Kırıldı!")
+alertcondition(sig_rsi_dip, title="RSI Dip Dönüşü", message="[RSI Dip] {{ticker}} 5 Onaylı Dip Dönüşü!")
+alertcondition(is_squeezed, title="MA Sıkışması", message="[Sıkışma] {{ticker}} 13-21-34-55 Sıkışma!")
