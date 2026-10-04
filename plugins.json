@@ -85,10 +85,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.de&sz=%size%",
-        "fileHash": "sha256-621afcc61d3b27f6c0657a5bafd6bdb95faa00a22c06fffddba193f471d92cc7",
+        "fileHash": "sha256-da55b430b1a590a0ac5b2eb5f9b12ccff378857978746a6d3192fd46e1c860f4",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 20661,
+        "fileSize": 25395,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -97,7 +97,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 3,
+        "version": 4,
         "internalName": "DiziBox",
         "description": "Yabanc\u0131 Dizi izle, T\u00fcm yabanc\u0131 dizilerin yeni ve eski sezonlar\u0131n\u0131 full hd izleyebilece\u011finiz elit site.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziBox.cs3",
@@ -125,10 +125,10 @@
     },
     {
         "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%",
-        "fileHash": "sha256-0d9fe92ea0b785809d3c323e9faa4c030a8aff730bbdaf49bd5cf5e2b0f60fd2",
+        "fileHash": "sha256-8fc689215026e640d9b3c366a87b42092d9c170a699ed29b010ce8ba174e08ae",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 23925,
+        "fileSize": 26674,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -137,7 +137,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 15,
+        "version": 16,
         "internalName": "Dizilla",
         "description": "Dizilla t\u00fcm yabanc\u0131 dizileri \u00fccretsiz olarak T\u00fcrk\u00e7e Dublaj ve altyaz\u0131l\u0131 se\u00e7enekleri ile 1080P kalite izleyebilece\u011finiz yeni nesil yabanc\u0131 dizi izleme siteniz.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/Dizilla.cs3",
@@ -145,10 +145,10 @@
     },
     {
         "iconUrl": "https://ddizimag.com/favicon.ico",
-        "fileHash": "sha256-ad2ff8644126be0881ff27837e617a9694fa2b38c990a293f49ea57f56920d5d",
+        "fileHash": "sha256-2202da6a1d9f8ee150357a73df5bbd95d1992ad85eee14c6357626f7ca5fa28c",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/MrDarkRed/cs",
-        "fileSize": 12728,
+        "fileSize": 17487,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -157,7 +157,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 1,
+        "version": 2,
         "internalName": "DiziMag",
         "description": "DiziMag \u2014 T\u00fcrk\u00e7e dizi izleme sitesi.",
         "url": "https://raw.githubusercontent.com/MrDarkRed/cs/builds/DiziMag.cs3",
